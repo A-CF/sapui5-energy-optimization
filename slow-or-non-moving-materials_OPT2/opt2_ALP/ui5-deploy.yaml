@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: ui.s2p.mm.slonomo.mat.opt2
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://z10lp1.ucc.in.tum.de:8100
+          client: '300'
+        app:
+          name: Z_OPT2_SLONOMOM
+          description: ''
+          package: Z_00_AWA
+          transport: Z10K900028
+        exclude:
+          - /test/

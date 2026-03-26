@@ -1,0 +1,30 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:commons="sap.suite.ui.microchart" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<SelectDialog id="idSelectStorageLocationDialog" noDataText="{i18n>STORAGELOCATION_VALUE_HELP_NO_DATA}"
+		title="{i18n>STORAGELOCATION_VALUE_HELP_TITLE}" search="_handleStorageLocationSearch"
+		items="{path: 'oStorageLocationCollection>/StorageLocationCollection', templateShareable: false, groupHeaderFactory: '._getGroupHeader' }">
+		<CustomListItem class="sapUiTinyMarginBegin">
+			<content>
+				<FlexBox alignItems="Start">
+					<items>
+						<VBox class="sapUiSmallMargin">
+							<ObjectIdentifier id="idStorageLocation" title="{oStorageLocationCollection>StorageLocationName}"
+								text="{oStorageLocationCollection>StorageLocation}" ariaLabelledBy="idStorageLocation"></ObjectIdentifier>
+							<Label id="idStorageBinLabel" displayOnly="true" wrapping="true" text="{oStorageLocationCollection>WarehouseStorageBinText}"/>
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</VBox>
+						<commons:ComparisonMicroChart size="S" minValue="{oStorageLocationCollection>/minValue}" maxValue="{oStorageLocationCollection>/maxValue}"
+							scale="{oStorageLocationCollection>BaseUnit}" class="sapUiSmallMargin" id="idStockChart"
+							visible="{oStorageLocationCollection>StorageLocationStockChartvisible}"></commons:ComparisonMicroChart>
+					</items>
+				</FlexBox>
+			</content>
+		</CustomListItem>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2009-2020 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='ER9CLNT001')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="MMIM_SLOWORNONMOVINGMATERIAL_SRV" sap:schema-version="1" xml:lang="de" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SlowOrNonMovingMatlQry" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="GeneratedId"/>
+                </Key>
+                <Property Name="GeneratedId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Material" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="40" Name="MaterialName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Werk" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="30" Name="PlantName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="16" Name="StorageLocationName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property Name="MatlWrhsStkQtyInMatlBaseUnit" Nullable="false" Precision="17" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:unicode="false" sap:unit="MaterialBaseUnit" sap:updatable="false"/>
+                <Property Name="StockValueInCCCrcy" Nullable="false" Precision="18" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:unicode="false" sap:unit="Currency" sap:updatable="false"/>
+                <Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property Name="TotalNoOfDays" Nullable="false" Precision="5" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property Name="CnsmpnLatestPostgDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Letzter Verbrauch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property Name="MatlDocLatestPostgDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Letzte Buchung" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property Name="NumberOfDaysSinceLastCnsmpn" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property Name="NumberOfDaysSinceLastMovement" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="3" Name="MaterialBaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Basis-ME" sap:semantics="unit-of-measure" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="5" Name="Currency" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Währung" sap:semantics="currency-code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="9" Name="MaterialGroup" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Warengruppe" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="20" Name="MaterialGroupName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="4" Name="MaterialType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Materialart" sap:unicode="false" sap:updatable="false"/>
+                <Property MaxLength="25" Name="MaterialTypeName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="C_SlowOrNonMovingMatlQryResult" sap:content-version="1" sap:label="Abfrage für nicht gängige Materialien" sap:semantics="aggregate">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+                <Property Name="CnsmpnLatestPostgDate_fc" Type="Edm.Byte" sap:creatable="false" sap:filterable="false" sap:label="Dyn. Feldsteuerung" sap:sortable="false" sap:updatable="false"/>
+                <Property Name="MatlDocLatestPostgDate_fc" Type="Edm.Byte" sap:creatable="false" sap:filterable="false" sap:label="Dyn. Feldsteuerung" sap:sortable="false" sap:updatable="false"/>
+                <Property Name="StorageLocation_fc" Type="Edm.Byte" sap:creatable="false" sap:filterable="false" sap:label="Dyn. Feldsteuerung" sap:sortable="false" sap:updatable="false"/>
+                <Property MaxLength="40" Name="Material" Type="Edm.String" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Materialnummer" sap:text="MaterialName" sap:value-list="standard"/>
+                <Property MaxLength="3" Name="MaterialBaseUnit" Type="Edm.String" sap:aggregation-role="dimension" sap:label="Basismengeneinheit" sap:semantics="unit-of-measure"/>
+                <Property MaxLength="5" Name="Currency" Type="Edm.String" sap:aggregation-role="dimension" sap:label="Währung" sap:quickinfo="Währungsschlüssel" sap:semantics="currency-code"/>
+                <Property MaxLength="9" Name="MaterialGroup" Type="Edm.String" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Warengruppe" sap:text="MaterialGroupName"/>
+                <Property MaxLength="20" Name="MaterialGroupName" Type="Edm.String" sap:label="Produktgruppenbschr." sap:quickinfo="Produktgruppenbeschreibung"/>
+                <Property MaxLength="4" Name="MaterialType" Type="Edm.String" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Materialart" sap:text="MaterialTypeName"/>
+                <Property MaxLength="25" Name="MaterialTypeName" Type="Edm.String" sap:label="Materialartenbez" sap:quickinfo="Bezeichnung der Materialart"/>
+                <Property MaxLength="40" Name="MaterialName" Type="Edm.String" sap:label="Materialkurztext"/>
+                <Property MaxLength="30" Name="PlantName" Type="Edm.String" sap:label="Name des Werks"/>
+                <Property MaxLength="4" Name="Plant" Type="Edm.String" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Werk" sap:text="PlantName" sap:value-list="standard"/>
+                <Property MaxLength="4" Name="StorageLocation" Type="Edm.String" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:field-control="StorageLocation_fc" sap:label="Lagerort" sap:text="to_StorageLocation/StorageLocationName" sap:value-list="standard"/>
+                <Property Name="MatlWrhsStkQtyInMatlBaseUnit" Precision="17" Scale="3" Type="Edm.Decimal" sap:aggregation-role="measure" sap:filterable="false" sap:label="Materialbestand" sap:quickinfo="Materiallagerbestand in Basismengeneinheit" sap:unit="MaterialBaseUnit"/>
+                <Property Name="StockValueInCCCrcy" Precision="18" Scale="3" Type="Edm.Decimal" sap:aggregation-role="measure" sap:filterable="false" sap:label="Bestandswert" sap:quickinfo="Bestandswert in Buchungskreiswährung" sap:unit="Currency"/>
+                <Property Name="CnsmpnLatestPostgDate" Precision="0" Type="Edm.DateTime" sap:aggregation-role="measure" sap:display-format="Date" sap:field-control="CnsmpnLatestPostgDate_fc" sap:filterable="false" sap:label="Letzter Verbrauch" sap:quickinfo="Datum der letzten Verbrauchsbuchung"/>
+                <Property Name="MatlDocLatestPostgDate" Precision="0" Type="Edm.DateTime" sap:aggregation-role="measure" sap:display-format="Date" sap:field-control="MatlDocLatestPostgDate_fc" sap:filterable="false" sap:label="Datum letzte Buchung"/>
+                <Property Name="NumberOfDaysSinceLastCnsmpn" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false" sap:label="Tage ohne Verbrauch" sap:quickinfo="Anzahl Tage seit letzter Verbrauchsbuchung"/>
+                <Property Name="NumberOfDaysSinceLastMovement" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false" sap:label="Tage ohne Buchung" sap:quickinfo="Anzahl Tage seit letzter Buchung"/>
+                <NavigationProperty FromRole="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397" Name="to_Material" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_EFE46A57E1DF0505162EDBDFBC654397" ToRole="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/>
+                <NavigationProperty FromRole="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A" Name="to_Plant" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_C9BD97D5BE67F67987EB5A51EEE9827A" ToRole="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/>
+                <NavigationProperty FromRole="FromRole_assoc_1404F672AE1F164DD57869B32B652288" Name="to_StorageLocation" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_1404F672AE1F164DD57869B32B652288" ToRole="ToRole_assoc_1404F672AE1F164DD57869B32B652288"/>
+                <NavigationProperty FromRole="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" ToRole="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="C_SlowOrNonMovingMatlQryParameters" sap:content-version="1" sap:semantics="parameters">
+                <Key>
+                    <PropertyRef Name="P_NumberOfDays"/>
+                    <PropertyRef Name="P_KeyDate"/>
+                </Key>
+                <Property DefaultValue="90" Name="P_NumberOfDays" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:parameter="mandatory" sap:sortable="false" sap:updatable="false"/>
+                <Property Name="P_KeyDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:display-format="Date" sap:filterable="false" sap:label="Bezugsdatum" sap:parameter="mandatory" sap:sortable="false" sap:updatable="false"/>
+                <NavigationProperty FromRole="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" Name="Results" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" ToRole="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/>
+            </EntityType>
+            <EntityType Name="I_MatlDocMaterialVHType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Lagermaterial" sap:quickinfo="Material, auf dem der Bestand geführt wird" sap:text="MaterialName"/>
+                <Property MaxLength="60" Name="MaterialGroupText" Type="Edm.String" sap:label="Warengrp.Bez. 2" sap:quickinfo="Bezeichnung der Warengruppe"/>
+                <Property MaxLength="25" Name="MaterialTypeName" Type="Edm.String" sap:label="Materialartenbez" sap:quickinfo="Bezeichnung der Materialart"/>
+                <Property MaxLength="9" Name="MaterialGroup" Type="Edm.String" sap:display-format="UpperCase" sap:label="Warengruppe"/>
+                <Property MaxLength="4" Name="MaterialType" Type="Edm.String" sap:display-format="UpperCase" sap:label="Materialart"/>
+                <Property MaxLength="40" Name="MaterialName" Type="Edm.String" sap:label="Materialkurztext"/>
+                <Property MaxLength="4" Name="AuthorizationGroup" Type="Edm.String" sap:display-format="UpperCase" sap:label="Berechtigungsgruppe"/>
+                <Property MaxLength="3" Name="MaterialBaseUnit" Type="Edm.String" sap:label="Basismengeneinheit" sap:semantics="unit-of-measure"/>
+                <Property MaxLength="10" Name="MaterialManufacturerNumber" Type="Edm.String" sap:display-format="UpperCase" sap:label="Hersteller" sap:quickinfo="Nummer eines Herstellers"/>
+                <Property MaxLength="40" Name="MaterialManufacturerPartNumber" Type="Edm.String" sap:display-format="UpperCase" sap:label="HerstellerteileNr" sap:quickinfo="Herstellerteilenummer"/>
+                <Property MaxLength="20" Name="MaterialGroupName" Type="Edm.String" sap:label="Produktgruppenbschr." sap:quickinfo="Produktgruppenbeschreibung"/>
+            </EntityType>
+            <EntityType Name="I_MatlDocPlantVHType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Plant"/>
+                </Key>
+                <Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Werk" sap:text="PlantName"/>
+                <Property MaxLength="30" Name="PlantName" Type="Edm.String" sap:label="Name des Werks"/>
+                <Property MaxLength="80" Name="FullName" Type="Edm.String" sap:label="Vollständiger Name" sap:quickinfo="Vollst. Name eines Beteiligten (GP, OrgEinh., Belegadresse)"/>
+                <Property MaxLength="60" Name="StreetName" Type="Edm.String" sap:label="Straße"/>
+                <Property MaxLength="12" Name="CityCode" Type="Edm.String" sap:display-format="UpperCase" sap:label="Ortsnummer" sap:quickinfo="Codierung des Orts für Orts- und Straßendatei"/>
+                <Property MaxLength="40" Name="CityName" Type="Edm.String" sap:label="Ort"/>
+                <Property MaxLength="3" Name="Country" Type="Edm.String" sap:display-format="UpperCase" sap:label="Länderschlüssel"/>
+                <Property MaxLength="10" Name="HouseNumber" Type="Edm.String" sap:label="Hausnummer"/>
+            </EntityType>
+            <EntityType Name="I_MatlDocStorageLocationVHType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Plant"/>
+                    <PropertyRef Name="StorageLocation"/>
+                </Key>
+                <Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Werk"/>
+                <Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Lagerort" sap:text="StorageLocationName"/>
+                <Property MaxLength="16" Name="StorageLocationName" Type="Edm.String" sap:label="Name des Lagerorts"/>
+                <Property Name="IsStorLocAuthznCheckActive" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Berechtigungsprüf." sap:quickinfo="Lagerortberechtigung bei Warenbewegungen aktiv"/>
+            </EntityType>
+            <Association Name="assoc_C9BD97D5BE67F67987EB5A51EEE9827A" sap:content-version="1">
+                <End Multiplicity="1" Role="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult"/>
+                <End Multiplicity="0..1" Role="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocPlantVHType"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A">
+                        <PropertyRef Name="Plant"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A">
+                        <PropertyRef Name="Plant"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_1404F672AE1F164DD57869B32B652288" sap:content-version="1">
+                <End Multiplicity="1" Role="FromRole_assoc_1404F672AE1F164DD57869B32B652288" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult"/>
+                <End Multiplicity="0..1" Role="ToRole_assoc_1404F672AE1F164DD57869B32B652288" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStorageLocationVHType"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_1404F672AE1F164DD57869B32B652288">
+                        <PropertyRef Name="StorageLocation"/>
+                        <PropertyRef Name="Plant"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_1404F672AE1F164DD57869B32B652288">
+                        <PropertyRef Name="StorageLocation"/>
+                        <PropertyRef Name="Plant"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_EFE46A57E1DF0505162EDBDFBC654397" sap:content-version="1">
+                <End Multiplicity="1" Role="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult"/>
+                <End Multiplicity="0..1" Role="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocMaterialVHType"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397">
+                        <PropertyRef Name="Material"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397">
+                        <PropertyRef Name="Material"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" sap:content-version="1">
+                <End Multiplicity="1" Role="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters"/>
+                <End Multiplicity="*" Role="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult"/>
+            </Association>
+            <EntityContainer Name="MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.SlowOrNonMovingMatlQry" Name="SlowOrNonMovingMatlQrys" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+                <EntitySet EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Name="C_SlowOrNonMovingMatlQryResults" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false"/>
+                <EntitySet EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters" Name="C_SlowOrNonMovingMatlQry" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+                <EntitySet EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocMaterialVHType" Name="I_MatlDocMaterialVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+                <EntitySet EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocPlantVHType" Name="I_MatlDocPlantVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+                <EntitySet EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStorageLocationVHType" Name="I_MatlDocStorageLocationVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+                <AssociationSet Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_C9BD97D5BE67F67987EB5A51EEE9827A" Name="assoc_C9BD97D5BE67F67987EB5A51EEE9827A" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+                    <End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/>
+                    <End EntitySet="I_MatlDocPlantVH" Role="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/>
+                </AssociationSet>
+                <AssociationSet Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_1404F672AE1F164DD57869B32B652288" Name="assoc_1404F672AE1F164DD57869B32B652288" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+                    <End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_1404F672AE1F164DD57869B32B652288"/>
+                    <End EntitySet="I_MatlDocStorageLocationVH" Role="ToRole_assoc_1404F672AE1F164DD57869B32B652288"/>
+                </AssociationSet>
+                <AssociationSet Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_EFE46A57E1DF0505162EDBDFBC654397" Name="assoc_EFE46A57E1DF0505162EDBDFBC654397" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+                    <End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/>
+                    <End EntitySet="I_MatlDocMaterialVH" Role="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/>
+                </AssociationSet>
+                <AssociationSet Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" Name="assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+                    <End EntitySet="C_SlowOrNonMovingMatlQry" Role="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/>
+                    <End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/Material" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Invtry mngmt postings for materials"/>
+                        <PropertyValue Property="CollectionPath" String="I_MatlDocMaterialVH"/>
+                        <PropertyValue Bool="true" Property="SearchSupported"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Material"/>
+                                    <PropertyValue Property="ValueListProperty" String="Material"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialGroup"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialType"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AuthorizationGroup"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialBaseUnit"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialManufacturerNumber"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialManufacturerPartNumber"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialGroupName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialGroupText"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MaterialTypeName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/Plant" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Inventory management postings on plant"/>
+                        <PropertyValue Property="CollectionPath" String="I_MatlDocPlantVH"/>
+                        <PropertyValue Bool="true" Property="SearchSupported"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Plant"/>
+                                    <PropertyValue Property="ValueListProperty" String="Plant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FullName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StreetName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="HouseNumber"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/StorageLocation" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Invtry mngmt posting on storage location"/>
+                        <PropertyValue Property="CollectionPath" String="I_MatlDocStorageLocationVH"/>
+                        <PropertyValue Bool="true" Property="SearchSupported"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StorageLocation"/>
+                                    <PropertyValue Property="ValueListProperty" String="StorageLocation"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Plant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StorageLocationName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="IsStorLocAuthznCheckActive"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link href="./sap/MMIM_SLOWORNONMOVINGMATERIAL_SRV/$metadata" rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link href="./sap/MMIM_SLOWORNONMOVINGMATERIAL_SRV/$metadata" rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

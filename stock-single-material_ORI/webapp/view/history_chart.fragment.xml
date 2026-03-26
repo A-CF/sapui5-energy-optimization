@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:viz="sap.viz.ui5.controls" xmlns:core="sap.ui.core"
+	xmlns:commons="sap.suite.ui.commons">
+	<Dialog title="{/Title}" id="idHistoryDialog" verticalScrolling="false" contentWidth="100%" contentHeight="100%" enableScrolling ="false" resizable="false">
+		<content>
+			<commons:ChartContainer id="idChartContainer" showFullScreen="true" showPersonalization="true" showLegend="true"
+				personalizationPress="onChartPersonalizationPress" contentChange="attachContentChange" autoAdjustHeight="true" >
+				<commons:toolbar>
+					<OverflowToolbar id="idAppToolbar">
+						<Text  id="idTxtChartContainerDrillDown" text="{i18n>TOOLTIP_DRILLDOWN_BTN}" visible="false"/>
+						<ToolbarSpacer id="idTBSpacerHisChart"/>
+						<Button id="idBtnDrillDown" icon="sap-icon://drill-down" type="Transparent" press="onDrillDown"></Button>
+						<Button id="idBtnDrillUp" icon="sap-icon://drill-up" type="Transparent" press="onDrillUp" enabled="false"></Button>
+						<Button id="idBtnCopilot" icon="sap-icon://co" type="Transparent" press="onCopilot" enabled="{/CopilotEnabled}" visible="{/CopilotActive}" tooltip="{i18n>BUTTON_SHOW_COPILOT}"></Button>
+						<commons:ChartContainerToolbarPlaceholder id="idCharConTBPlaHld"></commons:ChartContainerToolbarPlaceholder>
+					</OverflowToolbar>
+				</commons:toolbar>
+				<commons:content>
+					<commons:ChartContainerContent id="idCrtConCtnt" icon="sap-icon://vertical-bar-chart">
+						<commons:content>
+							<viz:Popover id="idHistoryLineChartPopOver"></viz:Popover>
+							<viz:VizFrame id="idHistoryLineChart" uiConfig="{applicationSet:'fiori'}" autoAdjustHeight="true" selectData="onVizFrameSelectData"
+								deselectData="onVizFrameDeselectData"></viz:VizFrame>
+						</commons:content>
+					</commons:ChartContainerContent>
+				</commons:content>
+			</commons:ChartContainer>
+		</content>
+		<endButton>
+			<Button id="idBtnCloChart" text="{i18n>BUTTON_CLOSE}" press="handleHistoryChartClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

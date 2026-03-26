@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:micro="sap.suite.ui.microchart" xmlns:core="sap.ui.core">
+	<VBox id="idVBoxMovePop" class="sapUiSmallMargin">
+		<Label id="idMovementPeriodlabel" text="{path: 'oMovementModel>/Period', formatter: '._popoverTextFormatter'}" class="sapUiTinyMarginBottom"/>
+		<micro:ComparisonMicroChart id="idMovementMicroChart" data="{path: 'oMovementModel>/Movements', templateShareable: false}"
+			busyIndicatorDelay="0" shrinkable="true" width="100%" visible="{oMovementModel>/ChartVisible}" busy="{oMovementModel>/ChartBusy}">
+			<micro:ComparisonMicroChartData
+				id="idCMCData"
+				title="{parts: ['oMovementModel>GoodsMovementTypeName', 'oMovementModel>GoodsMovementType'], formatter: '._concatenateMovementTypeText'}"
+				value="{oMovementModel>MatlCnsmpnQtyInMatlBaseUnit}"
+				displayValue="{oMovementModel>MatlCnsmpnQtyInMatlBaseUnit} {oMovementModel>MaterialBaseUnit}" color="Good"></micro:ComparisonMicroChartData>
+		</micro:ComparisonMicroChart>
+		<Text id="idTextStkConsumption" text="{parts: ['oMovementModel>/MaterialBaseUnit'], formatter: '._popoverStockConsumptionText'}"
+			visible="{= ${oMovementModel>/ChartVisible} === false}" class="sapUiTinyMarginTopBottom"></Text>
+	</VBox>
+</core:FragmentDefinition>

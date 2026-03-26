@@ -1,0 +1,50 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:commons="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:smartChart="sap.ui.comp.smartchart" 
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:sfi="sap.ui.comp.smartfield" xmlns:sfo="sap.ui.comp.smartform" xmlns:table="sap.ui.table"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:uxap="sap.uxap" xmlns="sap.m">
+    <core:HTML id="timeChartContainer"></core:HTML>
+    <!-- <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+        height='400px' width="100%" vizType='info/combination'>
+        <viz:dataset>
+            <viz.data:FlattenedDataset id="idTimSerVizFlattenedDataset">
+                <viz.data:dimensions>
+                    <viz.data:DimensionDefinition id="idTimeSerVizDimYearPeriod" name="{i18n>PERIOD}"
+                        value="{
+                        	path: 'YearPeriod',
+                        	formatter: '._yearMonthFormatter'
+                        }" />
+                </viz.data:dimensions>
+                <viz.data:measures>
+                    <viz.data:MeasureDefinition id="idTimeSerVizMeaSMI" name="{i18n>SLOW_INDICATOR}" 
+                        value="{ConsumptionToStockRatio}" />
+                    <viz.data:MeasureDefinition id="idTimeSerVizMeaPreSMI" name="{i18n>PREDICTED_SLOW_INDICATOR}"
+                        value="{PredictRatio}"/>
+                </viz.data:measures>
+            </viz.data:FlattenedDataset>
+        </viz:dataset>
+        <viz:feeds>
+            <viz.feeds:FeedItem id="idTimSerVizFeedItemSMI"  uid="valueAxis" type="Measure"
+                values="{
+                	parts:['i18n>SLOW_INDICATOR'],
+                	formatter:'.feedValuesFormatter'
+                }"/>
+			<viz.feeds:FeedItem id="idTimSerVizFeedItemPreSMI" uid="valueAxis" type="Measure"
+				values="{
+                	parts:['i18n>PREDICTED_SLOW_INDICATOR'],
+                	formatter:'.feedValuesFormatter'
+                }"/>
+            <viz.feeds:FeedItem id="idTimSerVizFeedItemPeriod" uid="categoryAxis" type="Dimension"
+                values="{
+                	parts:['i18n>PERIOD'],
+                	formatter:'.feedValuesFormatter'
+                }" />
+        </viz:feeds>
+    </viz:VizFrame> -->
+</core:FragmentDefinition>

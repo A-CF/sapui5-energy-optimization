@@ -1,0 +1,76 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 650,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ListReport.less",
+			"size": 79,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ObjectPage.less",
+			"size": 1855,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 6967,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 93009,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 92631,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 49269,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 3090,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.css",
+			"size": 49266,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.less",
+			"size": 2432,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.source.less",
+			"size": 240,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 52349,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 52346,
+			"theme": "sap_belize"
+		}
+	]
+}

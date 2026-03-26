@@ -1,0 +1,41 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="ui.s2p.mm.stock.overview.opt1.view"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<P13nDialog id="idChartPersDlg" ok="onChartPersonalizationOK" cancel="onPersonalizationChartCancel" showReset="false" reset="handleColumnSettingsReset"
+		initialVisiblePanelType="custom1" >
+		<IconTabBar id="idIconTabBarPersonalization" class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter id="idIconTabFilter" text="{i18n>TAB_TITLE_STOCKTYP}">
+					<Table id="idChartSettingsTable" visible="true" inset="false" mode="None" items="{path: '/ColumnCollection', templateShareable: false }">
+						<columns>
+							<Column id="idChartSettingTblTitleColumn" minScreenWidth="Phone">
+								<Text text="{i18n>TITLE_COLUMN}" id="idChartTitleColumn"/>
+							</Column>
+							<Column id="idChartSetTblVisibleHisChart" minScreenWidth="Phone">
+								<Text text="{i18n>VISIBLE_IN_HISTORY_COLUMN}" id="idVisibleInHistoryChart"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem id="idChartSetTblItem" visible="{HistoryAvailable}">
+								<cells>
+									<ObjectIdentifier id="idChartColumnName" title="{text}" class="sapUiSmallMarginTop"/>
+									<CheckBox id="idCBoxChartHisChartVisible" selected="{HistoryChartVisible}" select="onPersonalizationChartSelect"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</IconTabFilter>
+				<IconTabFilter text="{i18n>TAB_TITLE_SAFETY_STOCK}" id="idTabSafetyStockPerso">
+					<VBox id="idVBoxSafetyStk">
+					    <CheckBox id="idCBoxSatStkQty" text="{i18n>CHECKBOX_PERSON_SHOW_SAFETY_STOCK}" selected="{/showSafetyStockQuantity}" />
+					    <CheckBox id="idCBoxMiniSatStkQty" text="{i18n>CHECKBOX_PERSON_SHOW_MINIMUM_SAFETY_STOCK}" selected="{/showMinimumSafetyStockQuantity}" />
+				    </VBox>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+	</P13nDialog>
+</core:FragmentDefinition>

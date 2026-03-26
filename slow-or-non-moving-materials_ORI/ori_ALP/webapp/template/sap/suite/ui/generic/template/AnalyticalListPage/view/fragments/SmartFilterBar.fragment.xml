@@ -1,0 +1,113 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:smartfilterbarext="sap.suite.ui.generic.template.AnalyticalListPage.control"
+						 template:require="{
+						 SemanticDateRangeTypeHelper: 'sap/suite/ui/generic/template/listTemplates/semanticDateRangeTypeHelper'}"
+						 xmlns:build="sap.build">
+
+	<smartfilterbarext:SmartFilterBarExt id="template::SmartFilterBar" entitySet="{parameter>/entitySet}"
+		entityType="{parameter>/entityType}"
+		smartVariant="template::PageVariant"
+		class="sapSmartTemplatesAnalyticalListPageCompactFilter"
+		persistencyKey="compactFilterPersistencyKey"
+		useToolbar="false"
+		showMessages="false"
+		enableBasicSearch="{= !(${entitySet>Org.OData.Capabilities.V1.SearchRestrictions/Searchable/Bool} === 'false') }"
+		initialise="._templateEventHandlers.onSmartFilterBarInitialise"
+		initialized="._templateEventHandlers.onSmartFilterBarInitialized"
+		search="cmd:Search"
+		beforeVariantSave="._templateEventHandlers.onBeforeSFBVariantSave"
+		afterVariantLoad="._templateEventHandlers.onAfterSFBVariantLoad"
+		assignedFiltersChanged="._templateEventHandlers.onAssignedFiltersChanged"
+		considerAnalyticalParameters="true"
+		useDateRangeType="{parameter>/templateSpecific/datePropertiesSettings/useDateRange}"
+		reset="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onRestore' : undefined}"
+		filtersDialogClosed="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogClosed' : undefined}"
+		filtersDialogBeforeOpen="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogOpened' : undefined}"
+		filtersDialogSearch="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogSearch' : undefined}"
+		filtersDialogCancel="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogCancel' : undefined}"
+		clear="._templateEventHandlers.onDialogClear"
+		filtersDialogSearchForFilters = "{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onSearchForFilters' : undefined}"
+		useProvidedNavigationProperties = "{= (${entityType>sap:semantics} === 'aggregate') ? 'true' : 'false'}"
+		>
+		<smartfilterbarext:controlConfiguration>
+			<!-- <template:repeat list="{entityType>com.sap.vocabularies.UI.v1.SelectionFields}"
+							 var="selectionField">
+				<smartfilterbar:ControlConfiguration key="{= (${selectionField>PropertyPath}).replace('/', '.') }"
+													 visibleInAdvancedArea="true" groupId="_BASIC"
+													 index="{path: 'selectionField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getRepeatIndex'}"
+													 />
+			</template:repeat> -->
+
+
+			<template:with path='parameter>/templateSpecific/allControlConfiguration' var='selectionField'>
+				<template:repeat list="{selectionField>}">
+					<!-- if control configuration property is a date property and has date settings specified in the manifest -->
+					<template:if test="{parts: [{path: 'selectionField>PropertyPath'}, {path: 'parameter>/templateSpecific/datePropertiesSettings'}], formatter: 'SemanticDateRangeTypeHelper.isDateRangeType'}">
+						<template:then>			
+							<template:if test="{= ${selectionField>bNotPartOfSelectionField}}">
+								<template:then>
+									<!-- if control configuration property which has date settings specified is not part of selection field then design time configuration is not added-->
+									<smartfilterbar:ControlConfiguration
+										key="{= (${selectionField>PropertyPath}).replace('/', '.').trim() }"
+										conditionType="{parts: [{path: 'selectionField>PropertyPath'}, {path: 'parameter>/templateSpecific/datePropertiesSettings'}], formatter: 'SemanticDateRangeTypeHelper.getConditionTypeForDateProperties'}"
+									/>
+								</template:then>
+								<template:else>
+									<!-- if control configuration property which has date settings specified is part of selection field then design time congiration is added-->
+									<smartfilterbar:ControlConfiguration
+										key="{= (${selectionField>PropertyPath}).replace('/', '.').trim() }"
+										groupId="_BASIC"
+										index="{path: 'selectionField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getRepeatIndex'}"
+										visibleInAdvancedArea="true"
+										conditionType="{parts: [{path: 'selectionField>PropertyPath'}, {path: 'parameter>/templateSpecific/datePropertiesSettings'}], formatter: 'SemanticDateRangeTypeHelper.getConditionTypeForDateProperties'}"
+									/>
+								</template:else>
+							</template:if>
+						</template:then>
+						<template:else>
+							<smartfilterbar:ControlConfiguration
+								key="{= (${selectionField>PropertyPath}).replace('/', '.').trim() }"
+								groupId="_BASIC"
+								index="{path: 'selectionField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getRepeatIndex'}"
+								visibleInAdvancedArea="true"
+							/>
+						</template:else>
+					</template:if>
+				</template:repeat>
+			</template:with>
+
+
+
+
+			<!-- <template:if test="{parameter>/isDraftEnabled}">
+				<template:with
+						path="entityType>navigationProperty/[${path:'name'} === 'DraftAdministrativeData']/" var="draftAdminData">
+					<template:if test="{= (${draftAdminData>sap:filterable} !== 'false')  &amp;&amp; (${entitySet>com.sap.vocabularies.Common.v1.DraftRoot}) }">
+
+						<smartfilterbar:ControlConfiguration key="EditState" index="0"
+															 label="{i18n>EDITING_STATUS}"
+															 groupId="_BASIC">
+							<smartfilterbar:customControl>
+								<Select selectedKey="0" id="editStateFilter" selectionChange="._templateEventHandlers.onEditStateFilterChanged">
+									<core:Item key="0" text="{i18n>ALL_OBJECTS}"/>
+									<core:Item key="2" text="{i18n>DRAFT_OBJECT_FILTER}"/>
+									<core:Item key="3" text="{i18n>LOCKED_OBJECT_FILTER}"/>
+									<core:Item key="4" text="{i18n>UNSAVED_CHANGES_FILTER}"/>
+									<core:Item key="1" text="{i18n>UNCHANGED}"/>
+								</Select>
+							</smartfilterbar:customControl>
+						</smartfilterbar:ControlConfiguration>
+					</template:if>
+				</template:with>
+			</template:if> -->
+			<core:ExtensionPoint name="SmartFilterBarControlConfigurationExtension|{entitySet>name}"/>
+		</smartfilterbarext:controlConfiguration>
+		<smartfilterbarext:customData>
+			<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}'/>
+		</smartfilterbarext:customData>
+		<smartfilterbarext:layoutData>
+			<FlexItemData shrinkFactor="0"/>
+		</smartfilterbarext:layoutData>
+	</smartfilterbarext:SmartFilterBarExt>
+
+</core:FragmentDefinition>

@@ -1,0 +1,22 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog id="idAppPersDlg" title="{i18n>TITLE_PERSON}" verticalScrolling="false">
+		<content>
+			<VBox id="idVBoxPerSetting">
+				<CheckBox id="idCBoxExpAll" text="{i18n>CHECKBOX_PERSON_SHOW_STORLOCS}" selected="{/expandAllStorageLocationsOnLoad}"/>
+				<CheckBox id="idCBoxHideEmpColumn" text="{i18n>CHECKBOX_PERSON_HIDE_EMPTY_COLS}" selected="{/hideEmptyColumnsOnLoad}"/>
+				<CheckBox id="idCBoxHideEmpRow" text="{i18n>CHECKBOX_PERSON_HIDE_EMPTY_ROWS}" selected="{/hideEmptyRowsOnLoad}"/>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button id="idBtnPerSetSav" text="{i18n>BUTTON_PERSON_SAVE}" enabled="{/personalizationEnabled}" press="handlePersonalizationSave"/>
+		</beginButton>
+		<endButton>
+			<Button id="idBtnPerSetAbort" text="{i18n>BUTTON_PERSON_ABORT}" press="handlePersonalizationAbort"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

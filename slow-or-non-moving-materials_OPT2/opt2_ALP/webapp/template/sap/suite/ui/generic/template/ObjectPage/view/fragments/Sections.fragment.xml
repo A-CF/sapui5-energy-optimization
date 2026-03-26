@@ -1,0 +1,466 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout" xmlns:build="sap.build"
+	xmlns:dt="sap.ui.dt"
+	template:require="{ AH: 'sap/suite/ui/generic/template/js/AnnotationHelper',
+						AHReuseComponents: 'sap/suite/ui/generic/template/js/AnnotationHelperReuseComponents',
+						AHForDesignTime: 'sap/suite/ui/generic/template/changeHandler/js/AnnotationHelperForDesignTime',
+						AHSideContent: 'sap/suite/ui/generic/template/ObjectPage/annotationHelpers/AnnotationHelperSideContent'}">
+
+	<template:if test="{parameter>/settings/editableHeaderContent}">
+		<uxap:ObjectPageSection title="{i18n>HEADER}" titleUppercase="false" visible="{ui>/editable}">
+			<uxap:subSections>
+				<uxap:ObjectPageSubSection class="sapSmartTemplatesObjectPageSubSection sapUiRespGridOverflowHidden">
+					<layout:Grid defaultSpan="XL3 L4 M6 S12" hSpacing="0" vSpacing="0" class="sapSmartTemplatesObjectPageSubSectionGrid ">
+						<template:if test="{= ((${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value/Path} !== undefined ) || (${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value/Path} !== undefined )) }">
+						<sfo:SmartForm id="headerEditable::com.sap.vocabularies.UI.v1.HeaderInfo::Form"
+									   editable="true"
+									   class="sapSmartTemplatesSmartForm sapUxAPObjectPageSubSectionAlignContent"
+									   validationMode="Async"
+									   flexEnabled="true">
+							<sfo:customData>
+								<core:CustomData key="defaultInputFieldDisplayBehaviour" value="descriptionAndId" />
+								<core:CustomData key="defaultDropDownDisplayBehaviour" value="descriptionOnly" />
+								<core:CustomData key="defaultTextInEditModeSource" value="ValueListNoValidation"/>
+								<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}' />
+							</sfo:customData>
+							<sfo:layout>
+								<sfo:Layout labelSpanS="12" labelSpanM="12" labelSpanL="12" labelSpanXL="12" singleGroupFullSize="false" />
+							</sfo:layout>
+							<sfo:Group>
+								<sfo:GroupElement>
+									<sfi:SmartField id="headerEditable::com.sap.vocabularies.UI.v1.HeaderInfo::Title::Field"
+													clientSideMandatoryCheck="false"
+													value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'}"
+													fetchValueListReadOnly="{parts:[{path: 'entityType>'},{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getValueListReadOnly'}"
+													visible="{= ${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value/Path} !== undefined &amp;&amp; ${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/com.sap.vocabularies.UI.v1.Importance/EnumMember} ? ${path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibiltyBasedOnImportance'} : true }">
+									</sfi:SmartField>
+								</sfo:GroupElement>
+								<sfo:GroupElement>
+									<sfi:SmartField id="headerEditable::com.sap.vocabularies.UI.v1.HeaderInfo::Description::Field"
+													clientSideMandatoryCheck="false"
+													value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'}"
+													fetchValueListReadOnly="{parts:[{path: 'entityType>'},{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getValueListReadOnly'}"
+													visible="{= ${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value/Path} !== undefined &amp;&amp; ${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/com.sap.vocabularies.UI.v1.Importance/EnumMember} ? ${path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibiltyBasedOnImportance'} : true }">
+									</sfi:SmartField>
+								</sfo:GroupElement>
+							</sfo:Group>
+						</sfo:SmartForm>
+						</template:if>
+						<template:with path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.suite.ui.generic.template.ObjectPage.view.Details"
+										var="manifestViewExtensions">
+							<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceHeaderExists' }">
+							<!--	Replace Header Content Scenario -->
+								<layout:VerticalLayout
+									id="replaceHeaderFacetExtension"
+									visible="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceHeader' }">
+									<core:ExtensionPoint name="ReplaceHeaderExtensionFacet|{entitySet>name}" />
+								</layout:VerticalLayout>
+							</template:if>
+							<template:if test="{= !${parameter>/settings/simpleHeaderFacets} }">
+							<!--	Image Scenario only in Standard Header Facet -->
+								<template:if test="{entityType>com.sap.vocabularies.UI.v1.HeaderInfo/ImageUrl} || {entityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeImageUrl}">
+									<template:then>
+							<!--	Extension After Image Scenario -->
+										<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointAfterImageExists' }">
+											<layout:VerticalLayout
+												id="afterImageExtension"
+												visible="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointAfterImage' }">
+												<core:ExtensionPoint name="AfterImageExtensionFacet|{entitySet>name}"/>
+											</layout:VerticalLayout>
+										</template:if>
+									</template:then>
+									<template:else>
+							<!--	Extension No Image Scenario -->
+										<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointNoImageExists' }">
+											<layout:VerticalLayout id="noImageExtension"
+												visible="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointNoImage' }">
+												<core:ExtensionPoint name="NoImageExtensionFacet|{entitySet>name}"/>
+											</layout:VerticalLayout>
+										</template:if>
+									</template:else>
+								</template:if>
+							</template:if>
+
+							<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.HeaderFacets}" var="firstLevelFacet">
+								<template:with path="parameter>/variables" helper="AH.getNewVariable" var="isHeaderFacet">
+								<template:if test="{:= ${isHeaderFacet>}.set(true)}"/>
+								<template:with path="firstLevelFacet>" var="blockFacet">
+									<template:if test="{firstLevelFacet>Facets}">
+										<template:then>
+										<!--	Collection Facet in Header Facet -->
+											<template:repeat list="{firstLevelFacet>Facets}" var="facet">
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'facet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceHeaderFacetExists' }" >
+													<template:then>
+														<layout:VerticalLayout
+															id="header::{path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::ReplaceReferenceExtensionEdit"
+															visible="{parts: [{path: 'entitySet>name'}, {path: 'facet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceHeaderFacet' }">
+															<core:ExtensionPoint name="ReplaceHeaderFacet|{entitySet>name}|{path: 'facet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}" />
+														</layout:VerticalLayout>
+													</template:then>
+													<template:else>
+														<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.EditableHeaderFacet" type="XML" />
+													</template:else>
+												</template:if>
+											</template:repeat>
+										</template:then>
+										<template:else>
+											<template:with path="firstLevelFacet>" var="facet">
+										<!--	Reference Facets in Header Facet -->
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'facet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceHeaderFacetExists' }" >
+													<template:then>
+														<layout:VerticalLayout id="header::{path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::ReplaceReferenceExtensionEdit" >
+															<core:ExtensionPoint name="ReplaceHeaderFacet|{entitySet>name}|{path: 'facet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}" />
+														</layout:VerticalLayout>
+													</template:then>
+													<template:else>
+														<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.EditableHeaderFacet" type="XML" />
+													</template:else>
+												</template:if>
+											</template:with>
+										</template:else>
+									</template:if>
+								</template:with>
+								</template:with>
+							</template:repeat>
+						</template:with>
+					</layout:Grid>
+				</uxap:ObjectPageSubSection>
+			</uxap:subSections>
+		</uxap:ObjectPageSection>
+	</template:if>
+
+	<template:if test="{entityType>com.sap.vocabularies.UI.v1.Facets}">
+		<template:with path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.suite.ui.generic.template.ObjectPage.view.Details"
+					   helper="sap.suite.ui.generic.template.js.AnnotationHelper.getObjectPageExtensions"
+					   var="manifestViewExtensions">
+			<template:with path="entityType>com.sap.vocabularies.UI.v1.Facets"
+						   var="facets">
+ 				<template:with path="parameter>/variables" helper="AH.getNewVariable" var="isHeaderFacet">
+				<template:if test="{:= ${isHeaderFacet>}.set(false)}"/>
+ 					<template:repeat list="{parameter>/templateSpecific/sections}" var="section">
+					<!-- temporary: recreate the old variable (firstLevelFacet) by using the new one (section)
+								target: don't do the repeats over the annotations itself, but only over the preanalayzed data in templateSpecific
+								all needed information should be (made) available in the templateSpecific, so now we can step by step replace the 
+								accesses to the old variable (pointing to the metaModel) by corresponding access to the new variable
+								as soon as now access to old variable exists anymore, it should of course be removed
+					 -->
+ 					<template:with path="section>metaModelPath"  helper="AH.getMetaModelBinding" var="firstLevelFacet">
+						<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointBeforeFacetExists'}">
+							<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.BeforeFacetExtension" type="XML"/>
+						</template:if>
+						<template:with path="section>facetIdAsObject" var="facetId">
+							<!--	The id of the object page section is also used by the call of AHReuseComponents.getFollowingComponentsForFacet below. Therefore, it is prepared in variable objectPageSectionId -->
+							<template:with path="parameter>/" helper="sap.suite.ui.generic.template.js.StableIdHelper.preparePathForStableId" var="objectPageSectionId">
+							  <template:if test="{= ${objectPageSectionId>}.buildStableId({type: 'ObjectPage', subType: 'Section', sFacet: ${facetId>id}})}"/>
+								<uxap:ObjectPageSection
+										id="{objectPageSectionId>id}"
+										title="{path: 'section>facetAnnotation/Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+										titleUppercase="false"
+										visible="{= ${path: 'section>facetAnnotation/com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'section>facetAnnotation', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : (!${parameter>/isDraftEnabled} &amp;&amp; ${path: 'section>facetAnnotation/Target/AnnotationPath', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isSelf'} === false ? '{= !${ui>/createMode} }' : true)}">
+									<uxap:subSections>
+										<template:if test="{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isDeepFacetHierarchy'}">
+											<template:then>
+											
+												<template:repeat list="{section>subSections}" var="subSection">
+												<!-- temporary: recreate the old variable (secondLevelFacet) by using the new one (subSection) -->
+												<template:with path="subSection>metaModelPath"  helper="AH.getMetaModelBinding" var="secondLevelFacet">
+
+													<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointBeforeSubSectionExists'}">
+														<uxap:ObjectPageSubSection id="BeforeSubSection::{entitySet>name}::{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection" class="sapSmartTemplatesObjectPageSubSection"
+																				   title="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getExtensionPointBeforeSubSectionTitle'}">
+															<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointBeforeSubSectionLazyLoadingEnabled'}">
+																<uxap:customData>
+																	<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+																</uxap:customData>
+															</template:if>
+															<core:ExtensionPoint name="BeforeSubSection|{entitySet>name}|{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}"/>
+														</uxap:ObjectPageSubSection>
+													</template:if>
+													<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSubSectionExists'}">
+														<template:then>
+															<uxap:ObjectPageSubSection id="ReplaceSubSection::{entitySet>name}::{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection" class="sapSmartTemplatesObjectPageSubSection"
+																				title="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getExtensionPointReplaceSubSectionTitle'}">
+																<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointReplaceSubSectionLazyLoadingEnabled'}">
+																	<uxap:customData>
+																		<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+																	</uxap:customData>
+																</template:if>
+																<core:ExtensionPoint name="ReplaceSubSection|{entitySet>name}|{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}"/>
+															</uxap:ObjectPageSubSection>
+														</template:then>
+														<template:else>
+															<uxap:ObjectPageSubSection id="{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection"
+																					visible="{= ${path: 'subSection>facetAnnotation/com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'subSection>facetAnnotation', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+																					title="{path: 'subSection>facetAnnotation/Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" class="sapSmartTemplatesObjectPageSubSection">
+																<uxap:customData>
+																		<core:CustomData key="loadingStrategy" value="{parts: [{path: 'subSection>facetAnnotation'}, {path: 'parameter>/settings/sections'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getLoadingStrategy'}"/>
+																</uxap:customData>	
+																<template:if test="{path: 'subSection>facetAnnotation', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.doesCollectionFacetOnlyContainForms'}">
+																	<template:then>
+																		<template:with path="secondLevelFacet>" var="facet">
+																			<template:with path="secondLevelFacet>Facets" helper="sap.suite.ui.generic.template.js.AnnotationHelper.checkBlockContent" var="blockFacet">
+																					<template:if test="{= ${path: 'firstLevelFacet>Target', formatter: 'sap.ui.model.odata.AnnotationHelper.isMultiple'} || ${blockFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0}">
+																						<template:then>
+																							<uxap:blocks>
+																								<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FacetWithOptionOfSideContent" type="XML"/>
+																							</uxap:blocks>
+																						</template:then>
+																					</template:if>
+																			</template:with>
+																			<template:with path="secondLevelFacet>Facets" helper="sap.suite.ui.generic.template.js.AnnotationHelper.checkMoreBlockContent" var="blockFacet">
+																					<template:if test="{= ${blockFacet>com.sap.vocabularies.UI.v1.PartOfPreview/Bool} === 'false'}">
+																						<template:then>
+																							<uxap:moreBlocks>
+																								<!-- ObjectBase mixes default and additional content which leads to bad user experience. To avoid this, we introduce a
+																								"dummy block" with full width (columnLayout=4), nearly no height (defined in the css class) and no content. This separates
+																								default content from additional content. -->
+																								<uxap:BlockBase columnLayout='4' class="sapSmartTemplatesObjectPageSubSectionDummyBlock"/>
+																								<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.Facet" type="XML"/>
+																							</uxap:moreBlocks>
+																						</template:then>
+																					</template:if>
+		
+																				<template:repeat list="{secondLevelFacet>Facets}" var="facetCandidate">
+																					<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormBreakoutActions" type="XML" />
+																					<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormActions" type="XML" />
+																				</template:repeat>
+		
+																			</template:with>
+																			<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.SideContentActionButton" type="XML"/>
+																		</template:with>
+		
+																	</template:then>
+																	<template:else>
+																		<uxap:blocks>
+																			<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'AHSideContent.getSideContentExtensionPoint'}">
+																				<template:then>
+																					<template:with path="subSection>facetIdAsObject" var="facetId">
+																						<layout:DynamicSideContent  id="{:= ${parameter>/stableId}.getStableId({ type:'ObjectPageSection', subType:'DynamicSideContent', sFacet: ${facetId>id}}) }"
+																													containerQuery="true"
+																													sideContentPosition="{parts: [{path: 'entitySet>name'}, {path: 'subSection>facetAnnotation'}, {path: 'manifestViewExtensions>'}], formatter: 'AHSideContent.getSideContentPosition'}"
+																													equalSplit="{parts: [{path: 'entitySet>name'}, {path: 'subSection>facetAnnotation'}, {path: 'manifestViewExtensions>'}], formatter: 'AHSideContent.getEqualSplitValue'}"
+																													showMainContent="{path: 'facet>', formatter: 'AHSideContent.buildShowMainContentExpression'}"
+																													showSideContent="{path: 'facet>', formatter: 'AHSideContent.buildShowSideContentExpression'}"
+																													breakpointChanged="._templateEventHandlers.sideContentBreakpointChanged">
+																							<layout:mainContent>
+																							
+																								<template:repeat list="{subSection>blocks}" var="block">
+																									<!-- temporary: 
+																										no need to recreate the old variable thirdLevelFacet, as we directly remove all usages
+																										however, recreate variables facet and blockFacet that might be used inside Facet fragment -->
+																									<template:with path="block>metaModelPath"  helper="AH.getMetaModelBinding" var="facet">
+																									
+																										<template:with path="facet>" var="blockFacet">
+																											<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.Facet" type="XML"/>
+																										</template:with>
+																									</template:with>
+																								</template:repeat>
+																							</layout:mainContent>
+																							<layout:sideContent>
+																								<core:ExtensionPoint name="{parts: [{path: 'entitySet>name'}, {path: 'subSection>facetAnnotation'}, {path: 'manifestViewExtensions>'}], formatter: 'AHSideContent.getSideContentExtensionPoint'}"/>
+																							</layout:sideContent>
+																						</layout:DynamicSideContent>
+																					</template:with>
+																				</template:then>
+																				<template:else>
+
+																					<template:repeat list="{subSection>blocks}" var="block">
+																						<!-- temporary: 
+																							no need to recreate the old variable thirdLevelFacet, as we directly remove all usages
+																							however, recreate variables facet and blockFacet that might be used inside Facet fragment -->
+																						<template:with path="block>metaModelPath"  helper="AH.getMetaModelBinding" var="facet">
+
+																							<template:with path="facet>" var="blockFacet">
+																								<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.Facet" type="XML"/>
+																							</template:with>
+																						</template:with>
+																					</template:repeat>
+																				</template:else>
+																			</template:if>
+																		</uxap:blocks>
+
+																		<template:repeat list="{subSection>moreBlocks}" var="block">
+																			<!-- temporary: 
+																				no need to recreate the old variable thirdLevelFacet, as we directly remove all usages
+																				however, recreate variables facet and blockFacet that might be used inside Facet fragment -->
+																			<template:with path="block>metaModelPath"  helper="AH.getMetaModelBinding" var="facet">
+
+																				<template:with path="facet>" var="blockFacet">
+																					<uxap:moreBlocks>
+																						<!-- ObjectBase mixes default and additional content which leads to bad user experience. To avoid this, we introduce a
+																						"dummy block" with full width (columnLayout=4), nearly no height (defined in the css class) and no content. This separates
+																						default content from additional content. -->
+																						<uxap:BlockBase columnLayout='4' class="sapSmartTemplatesObjectPageSubSectionDummyBlock"/>
+																						<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.Facet" type="XML"/>
+																					</uxap:moreBlocks>
+																					<template:with path="blockFacet>" var="facetCandidate">
+																						<template:if test="{facetCandidate>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0">
+																							<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormBreakoutActions" type="XML" />
+																							<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormActions" type="XML" />
+																						</template:if>
+																					</template:with>
+																				</template:with>
+																			</template:with>
+																		</template:repeat>
+																		<template:with path="secondLevelFacet>" var="facet">
+																			<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.SideContentActionButton" type="XML"/>
+																		</template:with>
+																	</template:else>
+																</template:if>
+															</uxap:ObjectPageSubSection>
+														</template:else>
+													</template:if>
+													<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointAfterSubSectionExists'}">
+														<uxap:ObjectPageSubSection id="AfterSubSection::{entitySet>name}::{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection" class="sapSmartTemplatesObjectPageSubSection"
+																				   title="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getExtensionPointAfterSubSectionTitle'}">
+															<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'secondLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointAfterSubSectionLazyLoadingEnabled'}">
+																<uxap:customData>
+																	<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+																</uxap:customData>
+															</template:if>
+															<core:ExtensionPoint name="AfterSubSection|{entitySet>name}|{path: 'secondLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}"/>
+														</uxap:ObjectPageSubSection>
+													</template:if>
+												</template:with>
+												</template:repeat>
+											</template:then>
+											<!-- START of else part can be ignore for deepfacetHierarchy -->
+											<template:else>
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointBeforeSubSectionExists'}">
+													<uxap:ObjectPageSubSection 
+															id="BeforeSubSection::{entitySet>name}::{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection" 
+															class="sapSmartTemplatesObjectPageSubSection"
+															title="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getExtensionPointBeforeSubSectionTitle'}">
+														<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointBeforeSubSectionLazyLoadingEnabled'}">
+															<uxap:customData>
+																<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+															</uxap:customData>
+														</template:if>
+														<core:ExtensionPoint name="BeforeSubSection|{entitySet>name}|{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}"/>
+													</uxap:ObjectPageSubSection>
+												</template:if>
+
+												<template:with path="parameter>/variables" helper="AH.getNewVariable" var="objectPageTableSettings">
+													<template:if test="{:= ${objectPageTableSettings>}.set(${parameter>/templateSpecific/sectionsMap/}[${facetId>id}]['tableSettings'])}"/>
+													<template:if test="{= ${objectPageTableSettings>value/type} !== 'TreeTable' || !${device>/system/phone}}">
+														<uxap:ObjectPageSubSection id="{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection"
+																	title="{path: 'firstLevelFacet>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" class="sapSmartTemplatesObjectPageSubSection">
+															<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSubSectionExists'}">
+																<template:then>
+																	<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointReplaceSubSectionLazyLoadingEnabled'}">
+																		<uxap:customData>
+																			<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+																		</uxap:customData>
+																	</template:if>
+																	<core:ExtensionPoint name="ReplaceSubSection|{entitySet>name}|{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}"/>
+																</template:then>
+																<template:else>
+																	<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointReplaceFacetLazyLoadingEnabled'}">
+																		<template:then>
+																			<uxap:customData>
+																				<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+																			</uxap:customData>
+																		</template:then>
+																		<template:else>
+																			<uxap:customData>
+																				<core:CustomData key="loadingStrategy" value="{parts: [{path: 'firstLevelFacet>'}, {path: 'parameter>/settings/sections'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getLoadingStrategy'}"/>
+																			</uxap:customData>
+																		</template:else>
+																	</template:if>
+																	<template:with path="firstLevelFacet>Facets" helper="sap.suite.ui.generic.template.js.AnnotationHelper.checkBlockContent" var="blockFacet">
+																			<template:if test="{= ${path: 'firstLevelFacet>Target', formatter: 'sap.ui.model.odata.AnnotationHelper.isMultiple'} || ${blockFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0} || ${firstLevelFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0}">
+																				<template:then>
+																					<template:if test="{= ${blockFacet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.Communication.v1.Address') >= 0}">
+																						<template:with path="blockFacet>" var="facet">
+																							<template:with path="parameter>/" helper="sap.suite.ui.generic.template.js.StableIdHelper.preparePathForStableId" var="facetId">
+																								<template:if test="{= ${facetId>}.buildStableId({ type:'ObjectPage', subType:'StandardFacet', sRecordType: ${facet>RecordType}, sAnnotationPath: ${facet>Target/AnnotationPath} , sAnnotationId: ${facet>ID/String} }) }"/>
+																								<template:with path="facet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="address">
+																									<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.AddressFacet" type="XML"/>
+																								</template:with>
+																							</template:with>
+																						</template:with>
+																					</template:if>
+																					<uxap:blocks>
+																						<!-- Temporarily change sequence with ExtensionPoint until problem with runAsOwner is solved -->
+																						<core:ExtensionPoint name="ReplaceFacet|{entitySet>name}|{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}">
+																							<template:with path="firstLevelFacet>" var="facet">
+																								<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FacetWithOptionOfSideContent" type="XML"/>
+																							</template:with>
+																						</core:ExtensionPoint>
+																					</uxap:blocks>
+																					<!-- Action buttons for ReferenceFacets inside CollectionFacets -->
+																					<template:repeat list="{firstLevelFacet>Facets}" var="facetCandidate">
+																						<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormBreakoutActions" type="XML" />
+																						<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormActions" type="XML" />
+																					</template:repeat>
+																					<!-- Action buttons for root level ReferenceFacets -->
+																					<template:with path="firstLevelFacet>" var="facetCandidate">
+																						<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormBreakoutActions" type="XML" />
+																						<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.FormActions" type="XML" />
+																					</template:with>
+																					<template:with path="firstLevelFacet>" var="facet">
+																						<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.SideContentActionButton" type="XML"/>
+																					</template:with>
+																				</template:then>
+																			</template:if>
+																	</template:with>
+																	<template:with path="firstLevelFacet>Facets" helper="sap.suite.ui.generic.template.js.AnnotationHelper.checkMoreBlockContent" var="blockFacet">
+																			<template:if test="{= ${blockFacet>com.sap.vocabularies.UI.v1.PartOfPreview/Bool} === 'false'}">
+																				<template:then>
+																					<uxap:moreBlocks>
+																						<!-- ObjectBase mixes default and additional content which leads to bad user experience. To avoid this, we introduce a
+																						"dummy block" with full width (columnLayout=4), nearly no height (defined in the css class) and no content. This separates
+																						default content from additional content. -->
+																						<uxap:BlockBase columnLayout='4' class="sapSmartTemplatesObjectPageSubSectionDummyBlock"/>
+																						<template:with path="firstLevelFacet>" var="facet">
+																							<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.Facet" type="XML"/>
+																						</template:with>
+																					</uxap:moreBlocks>
+																				</template:then>
+																			</template:if>
+																	</template:with>
+																</template:else>
+															</template:if>
+														</uxap:ObjectPageSubSection>
+													</template:if>
+												</template:with>
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointAfterSubSectionExists'}">
+													<uxap:ObjectPageSubSection id="AfterSubSection::{entitySet>name}::{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::SubSection" class="sapSmartTemplatesObjectPageSubSection"
+																				title="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getExtensionPointAfterSubSectionTitle'}">
+														<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointAfterSubSectionLazyLoadingEnabled'}">
+															<uxap:customData>
+																<core:CustomData key="loadingStrategy" value="lazyLoadingAfterHeader"/>
+															</uxap:customData>
+														</template:if>
+														<core:ExtensionPoint name="AfterSubSection|{entitySet>name}|{path: 'firstLevelFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}"/>
+													</uxap:ObjectPageSubSection>
+												</template:if>
+											</template:else>
+											<!-- END of else part can be ignore for deepfacetHierarchy -->
+										</template:if>
+										<!-- Add reuse component which are grouped to this section -->
+										<template:with path="parameter>/variables" helper="AH.getNewVariable" var="followingComponents">
+											<template:if test="{:= ${followingComponents>}.set(AHReuseComponents.getFollowingComponentsForFacet(${section>facetAnnotation}, ${parameter>/treeNode/facetsWithEmbeddedComponents}, ${parameter>/treeNode/embeddedComponents}, ${objectPageSectionId>id})) }"/>
+											<template:repeat list="{followingComponents>value}" var="followingComponent" > 
+												<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.EmbeddedSubSections" type="XML"/>
+											</template:repeat>
+										</template:with>
+									</uxap:subSections>
+								</uxap:ObjectPageSection>
+							</template:with>
+						</template:with>
+
+						<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointAfterFacetExists'}">
+							<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.AfterFacetExtension" type="XML"/>
+						</template:if>
+ 					</template:with>
+				</template:repeat>
+				</template:with>
+			</template:with>
+		</template:with>
+		<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.ComponentSections" type="XML"/>
+	</template:if>
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="idTableSortSetting" confirm="handleConfirm">
+		<sortItems>
+			<ViewSettingsItem id="idTablePlantSort" text="{i18n>SORT_BY_PLANT_ID}" key="Plant" selected="true"/>
+			<ViewSettingsItem id="idTablePltNameSort" text="{i18n>SORT_BY_PLANT_NAME}" key="PlantName"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

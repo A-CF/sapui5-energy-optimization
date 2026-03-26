@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<ResponsivePopover id="idResPopCopilot" title="{i18n>TITLE_COPILOT}" placement="HorizontalPreferedRight" modal="false" showCloseButton="false">
+		<content>
+			<List id="idCopilotList" items="{path: '/Chats', templateShareable: false}">
+				<items>
+					<ObjectListItem id="idCopilotListItem" title="{title}" type="Active" press="handleAddtoCopilotChat">
+						<attributes>
+							<ObjectAttribute id="idCopilotItemObjAttr" text="{ path: 'createdOn', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'short' } }"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

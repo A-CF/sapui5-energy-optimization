@@ -1,0 +1,31 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:commons="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:smartChart="sap.ui.comp.smartchart" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:sfi="sap.ui.comp.smartfield" xmlns:sfo="sap.ui.comp.smartform" xmlns:table="sap.ui.table"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:uxap="sap.uxap" xmlns="sap.m">
+	<VBox id="idVBoxSMIPlantViz">
+		<viz:Popover id="idSMIPlantVizFramePopover" resizable="true"></viz:Popover>
+		<viz:VizFrame id="idSMIPlantVizFrame" uiConfig="{applicationSet:'fiori'}" height='400px' width="100%" vizType='info/dual_column'>
+			<viz:dataset>
+				<viz.data:FlattenedDataset id="idSMIPltFlattenedDataset">
+					<viz.data:dimensions>
+						<viz.data:DimensionDefinition id="idSMIPltDimPltName" name="{i18n>PLANT}" value="{Plant}" displayValue="{ parts: ['PlantName', 'Plant'], formatter: '._concatenatePlantText'}"/>
+					</viz.data:dimensions>
+					<viz.data:measures>
+						<viz.data:MeasureDefinition id="idSMIPltMeaStkRat" name="{i18n>SLOW_INDICATOR}" value="{ConsumptionToStockRatio}"/>
+						<viz.data:MeasureDefinition id="idSMIPltMeaStkQty" name="{i18n>STOCK_QUANTITY}" value="{MatlWrhsStkQtyInMatlBaseUnit}" unit="{MaterialBaseUnit}"/>
+					</viz.data:measures>
+				</viz.data:FlattenedDataset>
+			</viz:dataset>
+			<viz:feeds>
+				<viz.feeds:FeedItem id="idSMIPltFeedItemSMI" uid="valueAxis" type="Measure" values="{ parts:['i18n>SLOW_INDICATOR'], formatter:'.feedValuesFormatter' }"/>
+				<viz.feeds:FeedItem id="idSMIPltFeedItemStkQty" uid="valueAxis2" type="Measure" values="{ parts:['i18n>STOCK_QUANTITY'], formatter:'.feedValuesFormatter' }"/>
+				<viz.feeds:FeedItem id="idSMIPltFeedItemPlt" uid="categoryAxis" type="Dimension" values="{ parts:['i18n>PLANT'], formatter:'.feedValuesFormatter' }"/>
+			</viz:feeds>
+		</viz:VizFrame>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,551 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 9358,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 3263
+		},
+		{
+			"name": "annotationHelpers/AnnotationHelperActionButtons-dbg.js",
+			"size": 9266,
+			"isDebug": true
+		},
+		{
+			"name": "annotationHelpers/AnnotationHelperActionButtons.js",
+			"size": 2303
+		},
+		{
+			"name": "annotationHelpers/AnnotationHelperSideContent-dbg.js",
+			"size": 4807,
+			"isDebug": true
+		},
+		{
+			"name": "annotationHelpers/AnnotationHelperSideContent.js",
+			"size": 1623
+		},
+		{
+			"name": "controller/ControllerImplementation-dbg.js",
+			"size": 137949,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ControllerImplementation.js",
+			"size": 50550
+		},
+		{
+			"name": "controller/MultipleViewsHandler-dbg.js",
+			"size": 7077,
+			"isDebug": true
+		},
+		{
+			"name": "controller/MultipleViewsHandler.js",
+			"size": 2339
+		},
+		{
+			"name": "controller/SideContentHandler-dbg.js",
+			"size": 11539,
+			"isDebug": true
+		},
+		{
+			"name": "controller/SideContentHandler.js",
+			"size": 2512
+		},
+		{
+			"name": "controllerFrameworkExtensions-dbg.js",
+			"size": 2750,
+			"isDebug": true
+		},
+		{
+			"name": "controllerFrameworkExtensions.js",
+			"size": 466
+		},
+		{
+			"name": "extensionAPI/DraftTransactionController-dbg.js",
+			"size": 5983,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/DraftTransactionController.js",
+			"size": 1231
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI-dbg.js",
+			"size": 11854,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI.js",
+			"size": 2120
+		},
+		{
+			"name": "extensionAPI/NonDraftTransactionController-dbg.js",
+			"size": 4455,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/NonDraftTransactionController.js",
+			"size": 1133
+		},
+		{
+			"name": "flexibility/ObjectPage.flexibility-dbg.js",
+			"size": 3051,
+			"isDebug": true
+		},
+		{
+			"name": "flexibility/ObjectPage.flexibility.js",
+			"size": 2126
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"size": 9493,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"size": 9341,
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"size": 10868,
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ca.properties",
+			"size": 3955,
+			"locale": "ca",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"size": 4227,
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cy.properties",
+			"size": 3839,
+			"locale": "cy",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_da.properties",
+			"size": 3579,
+			"locale": "da",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"size": 4050,
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_el.properties",
+			"size": 11651,
+			"locale": "el",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"size": 3402,
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_GB.properties",
+			"size": 3390,
+			"locale": "en_GB",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"size": 18554,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"size": 5405,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"size": 3752,
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es_MX.properties",
+			"size": 3910,
+			"locale": "es_MX",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_et.properties",
+			"size": 3631,
+			"locale": "et",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fi.properties",
+			"size": 4003,
+			"locale": "fi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"size": 4290,
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr_CA.properties",
+			"size": 4354,
+			"locale": "fr_CA",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hi.properties",
+			"size": 10977,
+			"locale": "hi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"size": 3557,
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"size": 4484,
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_id.properties",
+			"size": 3455,
+			"locale": "id",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"size": 3517,
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"size": 8754,
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"size": 6859,
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_kk.properties",
+			"size": 10611,
+			"locale": "kk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ko.properties",
+			"size": 6391,
+			"locale": "ko",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lt.properties",
+			"size": 4320,
+			"locale": "lt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lv.properties",
+			"size": 4294,
+			"locale": "lv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ms.properties",
+			"size": 3546,
+			"locale": "ms",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_nl.properties",
+			"size": 3704,
+			"locale": "nl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"size": 3551,
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"size": 4054,
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"size": 3854,
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt_PT.properties",
+			"size": 3769,
+			"locale": "pt_PT",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"size": 4375,
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"size": 10642,
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"size": 3723,
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"size": 4379,
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"size": 3784,
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sr.properties",
+			"size": 10489,
+			"locale": "sr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sv.properties",
+			"size": 3585,
+			"locale": "sv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_th.properties",
+			"size": 10947,
+			"locale": "th",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"size": 4330,
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_uk.properties",
+			"size": 10842,
+			"locale": "uk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_vi.properties",
+			"size": 6326,
+			"locale": "vi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"size": 4947,
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_TW.properties",
+			"size": 4908,
+			"locale": "zh_TW",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "manifest.json",
+			"size": 2489
+		},
+		{
+			"name": "templateSpecificPreparationHelper-dbg.js",
+			"size": 17396,
+			"isDebug": true
+		},
+		{
+			"name": "templateSpecificPreparationHelper.js",
+			"size": 4849
+		},
+		{
+			"name": "view/Details.view.xml",
+			"size": 9454
+		},
+		{
+			"name": "view/fragments/Actions.fragment.xml",
+			"size": 7543
+		},
+		{
+			"name": "view/fragments/AfterFacetExtension.fragment.xml",
+			"size": 2947
+		},
+		{
+			"name": "view/fragments/BeforeFacetExtension.fragment.xml",
+			"size": 2952
+		},
+		{
+			"name": "view/fragments/BreadcrumbLinks.fragment.xml",
+			"size": 1526
+		},
+		{
+			"name": "view/fragments/Breadcrumbs.fragment.xml",
+			"size": 698
+		},
+		{
+			"name": "view/fragments/CRUDActionButtons.fragment.xml",
+			"size": 2763
+		},
+		{
+			"name": "view/fragments/ComponentSections.fragment.xml",
+			"size": 740
+		},
+		{
+			"name": "view/fragments/DataFieldForActionNonDetermining.fragment.xml",
+			"size": 1671
+		},
+		{
+			"name": "view/fragments/DraftResumeDialog.fragment.xml",
+			"size": 541
+		},
+		{
+			"name": "view/fragments/EmbeddedSubSections.fragment.xml",
+			"size": 1428
+		},
+		{
+			"name": "view/fragments/ExtensionFacetLayout.fragment.xml",
+			"size": 1413
+		},
+		{
+			"name": "view/fragments/Facet.fragment.xml",
+			"size": 3751
+		},
+		{
+			"name": "view/fragments/FacetWithOptionOfSideContent.fragment.xml",
+			"size": 2451
+		},
+		{
+			"name": "view/fragments/Footer.fragment.xml",
+			"size": 5211
+		},
+		{
+			"name": "view/fragments/FooterCommands.fragment.xml",
+			"size": 378
+		},
+		{
+			"name": "view/fragments/FormActions.fragment.xml",
+			"size": 2438
+		},
+		{
+			"name": "view/fragments/FormBreakoutActions.fragment.xml",
+			"size": 1202
+		},
+		{
+			"name": "view/fragments/HeaderCommands.fragment.xml",
+			"size": 661
+		},
+		{
+			"name": "view/fragments/HeaderContent.fragment.xml",
+			"size": 27658
+		},
+		{
+			"name": "view/fragments/HeaderContentWithExtension.fragment.xml",
+			"size": 967
+		},
+		{
+			"name": "view/fragments/HeaderImage.fragment.xml",
+			"size": 4159
+		},
+		{
+			"name": "view/fragments/ImageDialog.fragment.xml",
+			"size": 397
+		},
+		{
+			"name": "view/fragments/MultipleViewsSingleTableMode.fragment.xml",
+			"size": 5810
+		},
+		{
+			"name": "view/fragments/NavigationBar.fragment.xml",
+			"size": 921
+		},
+		{
+			"name": "view/fragments/RelatedAppsSheet.fragment.xml",
+			"size": 463
+		},
+		{
+			"name": "view/fragments/Sections.fragment.xml",
+			"size": 39525
+		},
+		{
+			"name": "view/fragments/ShowConfirmationOnDraftActivate.fragment.xml",
+			"size": 507
+		},
+		{
+			"name": "view/fragments/SideContentActionButton.fragment.xml",
+			"size": 1436
+		},
+		{
+			"name": "view/fragments/SmartChart.fragment.xml",
+			"size": 5427
+		},
+		{
+			"name": "view/fragments/SmartTable.fragment.xml",
+			"size": 19678
+		},
+		{
+			"name": "view/fragments/SmartTablePlugins.fragment.xml",
+			"size": 188
+		},
+		{
+			"name": "view/fragments/TableCommands.fragment.xml",
+			"size": 385
+		},
+		{
+			"name": "view/fragments/TableDeleteConfirmation.fragment.xml",
+			"size": 884
+		},
+		{
+			"name": "view/fragments/UnsavedChangesDialog.fragment.xml",
+			"size": 543
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="ui.s2p.mm.stock.overview.opt1.view"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<P13nDialog id="idTableSetDlg" ok="handleColumnSettingsOk" cancel="handleColumnSettingsClose" showReset="false" reset="handleColumnSettingsReset"
+		initialVisiblePanelType="custom1">
+		<panels>
+			<custom:CustomPanel id="idCusPanelTblSet" visible="true" type="custom1">
+				<custom:content>
+					<Table id="idColumnSettingsTable" visible="true" inset="false" mode="None" items="{path: '/ColumnCollection', templateShareable: false }">
+						<columns>
+							<Column id="idColumnTitle" minScreenWidth="Phone">
+								<Text text="{i18n>TITLE_COLUMN}" id="idTitleColumn"/>
+							</Column>
+							<Column id="idColumnVisible" minScreenWidth="Phone">
+								<Text text="{i18n>VISIBLE_IN_TABLE_COLUMN}" id="idVisibleInTableColumn"/>
+							</Column>
+							<Column id="idColumnHistoryVisible" minScreenWidth="Phone">
+								<Text text="{i18n>VISIBLE_IN_HISTORY_COLUMN}" id="idVisibleInHistoryColumn"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem id="idColumnItems">
+								<cells>
+									<ObjectIdentifier id="idColumnName" title="{text}" class="sapUiSmallMarginTop"/>
+									<CheckBox id="idCBColumnVisible" selected="{visible}" enabled="{enabled}" select="handleColumnSettingsSelect"/>
+									<CheckBox id="idCBColumnHistoryVisible" selected="{HistoryVisible}" enabled="{HistoryEnabled}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</custom:content>
+			</custom:CustomPanel>
+		</panels>
+	</P13nDialog>
+</core:FragmentDefinition>

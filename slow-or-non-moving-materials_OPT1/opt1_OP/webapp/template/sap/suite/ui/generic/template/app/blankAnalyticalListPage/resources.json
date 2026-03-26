@@ -1,0 +1,18 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 241,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 200
+		},
+		{
+			"name": "manifest.json",
+			"size": 2485
+		}
+	]
+}

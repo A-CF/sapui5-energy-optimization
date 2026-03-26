@@ -1,0 +1,178 @@
+{
+  "_version": "1.11.0",
+  "sap.app": {
+    "id": "ui.s2p.mm.slonomo.mat.opt2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "8.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "tags": {
+      "keywords": []
+    },
+    "ach": "MM-FIO-IM-SGM",
+    "resources": "resources.json",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/MMIM_SLOWORNONMOVINGMATERIAL_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": ["MMIM_SLOWORNONMOVING_ANNO_MDL_02", "localAnnotations"],
+          "localUri": "localService/metadata.xml"
+        }
+      },
+      "MMIM_SLOWORNONMOVING_ANNO_MDL_02": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='MMIM_SLOWORNONMOVING_ANNO_MDL_02',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/MMIM_SLOWORNONMOVING_ANNO_MDL_02.xml"
+        }
+      },
+      "localAnnotations": {
+        "uri": "annotations/annotations.xml",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "annotations/annotations.xml"
+        }
+      }
+    },
+    "offline": false,
+    "sourceTemplate": {
+      "id": "ALP_WebIDE_Plugin.analyticallistpage",
+      "version": "1.41.1",
+      "toolsId": "a045c34f-2634-4b0f-999f-cfd3b67e06fc"
+    },
+    "crossNavigation": {
+      "inbounds": {},
+      "outbounds": {
+        "SlowOrNonMovingDetailPage": {
+          "semanticObject": "InventoryManagement0",
+          "action": "displaySlowOrNonMovingDetail0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": false
+    },
+    "supportedThemes": ["sap_hcb", "sap_belize"]
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "resources": {
+      "js": [],
+      "css": []
+    },
+    "config": {
+      "sapFiori2Adaptation": true
+    },
+    "resourceRoots": {
+      "sap.suite.ui.generic.template": "./template"
+    },
+    "dependencies": {
+      "minUI5Version": "1.78.4",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.ui.generic.app": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.fl": {}
+      },
+      "components": {}
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      },
+      "i18n|sap.suite.ui.generic.template.AnalyticalListPage|C_SlowOrNonMovingMatlQryResults": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/AnalyticalListPage/C_SlowOrNonMovingMatlQryResults/i18n.properties"
+      },
+      "i18n|sap.suite.ui.generic.template.ObjectPage|C_SlowOrNonMovingMatlQryResults": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/ObjectPage/C_SlowOrNonMovingMatlQryResults/i18n.properties"
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false,
+          "metadataUrlParams": {
+            "sap-documentation": "heading,quickinfo",
+            "sap-value-list": "none"
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.suite.ui.generic.template.AnalyticalListPage.view.AnalyticalListPage": {
+            "controllerName": "ui.s2p.mm.slonomo.mat.opt2.ext.controller.AnalyticalListPageExt"
+          }
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  },
+  "sap.ui.generic.app": {
+    "pages": [
+      {
+        "entitySet": "C_SlowOrNonMovingMatlQryResults",
+        "component": {
+          "name": "sap.suite.ui.generic.template.AnalyticalListPage",
+          "list": true,
+          "settings": {
+            "gridTable": false,
+            "multiSelect": false,
+            "lazyLoadVisualFilter": true,
+            "defaultContentView": "charttable",
+            "defaultFilterMode": "compact",
+            "autoHide": true,
+            "showGoButtonOnFilterBar": true,
+            "condensedTableLayout": true,
+            "keyPerformanceIndicators": {}
+          }
+        },
+        "pages": [
+          {
+            "entitySet": "C_SlowOrNonMovingMatlOPgSet",
+            "component": {
+              "name": "sap.suite.ui.generic.template.ObjectPage"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sap.fiori": {
+    "registrationIds": ["F2137"],
+    "archeType": "analytical"
+  },
+  "sap.platform.hcp": {
+    "uri": ""
+  }
+}

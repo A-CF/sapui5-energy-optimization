@@ -1,0 +1,35 @@
+specVersion: "3.1"
+metadata:
+  name: ui.s2p.mm.lib.slonomo.mat.ori
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: https://z10lp1.ucc.in.tum.de:8100
+            client: "300"
+            destination: Z10_UCC
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: ui.s2p.mm.lib.slonomo.mat.ori
+        ui5Theme: sap_fiori_3
+builder:
+  resources:
+    excludes:
+      - /template

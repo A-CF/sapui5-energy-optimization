@@ -1,0 +1,21 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<ResponsivePopover id="idResPopSpeStk" title="{i18n>TITLE_SPECIALSTOCK}" placement="HorizontalPreferedRight" modal="false" showCloseButton="false">
+		<content>
+			<List id="idListSpeStk" items="{path: 'SpecialStocks>/SpecialStocks', templateShareable: false}">
+				<items>
+					<ObjectListItem id="idListItemSpeStk" title="{SpecialStocks>InventorySpecialStockTypeName}" type="{SpecialStocks>/Navigation2MultiStockEnabled}"
+						number="{SpecialStocks>Quantity}" numberUnit="{SpecialStocks>AlternativeUnit}" press="handleNav2MultiStockViaSpecialStockPressed">
+						<attributes>
+							<ObjectAttribute id="idSpeStkObjAttr" text="{SpecialStocks>InventorySpecialStockType}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

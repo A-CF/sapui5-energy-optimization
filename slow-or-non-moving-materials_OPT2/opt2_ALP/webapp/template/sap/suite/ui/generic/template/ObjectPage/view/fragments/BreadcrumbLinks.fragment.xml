@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap">
+
+    <template:repeat list="{parameter>/treeNodeAncestors}" var="ancestorNode">
+		<template:if test="{= ${ancestorNode>level} > 0 }">    	
+		    <template:repeat list="{entitySet>/dataServices/schema/0/entityContainer/0/entitySet}"
+		                        var="tmpEntitySet">
+		        <template:if test="{parts: [{path: 'tmpEntitySet>'}, {path: 'ancestorNode>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.matchesBreadCrumb'}">
+		            <template:with path="tmpEntitySet>entityType"
+		                            helper="sap.ui.model.odata.AnnotationHelper.gotoEntityType"
+		                            var="tmpEntityType">
+		                <Link text="{parts : [{path: 'ancestorNode>'}, {path: 'tmpEntityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value'}, {path: 'tmpEntityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName'}] , formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.buildBreadCrumbExpression'}" 
+		                    press="._templateEventHandlers.onBreadCrumbUrlPressed"
+		                    visible="{:= ${appSettings>/flexibleColumnLayout} ? '{_templPrivGlobal>/generic/FCL/isVisuallyFullScreen}' : 'true' }" >
+		                </Link>
+		            </template:with>
+		        </template:if>
+		    </template:repeat>
+		</template:if>
+    </template:repeat>
+
+</core:FragmentDefinition>

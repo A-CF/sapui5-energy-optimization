@@ -1,0 +1,713 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/Component.js",
+			"size": 300,
+			"isDebug": true,
+			"required": [
+				"sap/suite/ui/generic/template/lib/AppComponent.js"
+			]
+		},
+		{
+			"name": "Component-h2-preload-dbg.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/Component-h2-preload.js",
+			"size": 6720,
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"sap/chart/data/TimeDimension.js",
+				"sap/m/Label.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/suite/ui/generic/template/lib/AppComponent.js",
+				"sap/suite/ui/microchart/ComparisonMicroChart.js",
+				"sap/suite/ui/microchart/ComparisonMicroChartData.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/model/Filter.js",
+				"sap/viz/ui5/controls/Popover.js",
+				"sap/viz/ui5/controls/VizFrame.js",
+				"sap/viz/ui5/controls/common/feeds/FeedItem.js",
+				"sap/viz/ui5/data/DimensionDefinition.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/data/MeasureDefinition.js"
+			],
+			"included": [
+				"ui/s2p/mm/lib/slonomo/mat/opt2/Component.js",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/manifest.json",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/controller/ObjectPageExt.controller.js",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/BOMSmartTable.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/MovementPopover.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/SMIPlantChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/StockSituationTimeSeriesChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/TimeSeriesChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_sappsd.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_saptrc.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ar.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_bg.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ca.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_cs.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_da.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_de.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_el.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_sappsd.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_saptrc.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_es.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_et.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hu.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_it.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_iw.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ja.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_kk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ko.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lt.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lv.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ms.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_nl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_no.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pt.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ro.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ru.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sh.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sv.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_th.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_tr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_uk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_vi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_CN.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_TW.properties"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/Component-h2-preload.js",
+			"size": 6642,
+			"merged": true,
+			"required": [
+				"sap/chart/data/TimeDimension.js",
+				"sap/m/Label.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/suite/ui/generic/template/lib/AppComponent.js",
+				"sap/suite/ui/microchart/ComparisonMicroChart.js",
+				"sap/suite/ui/microchart/ComparisonMicroChartData.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/model/Filter.js",
+				"sap/viz/ui5/controls/Popover.js",
+				"sap/viz/ui5/controls/VizFrame.js",
+				"sap/viz/ui5/controls/common/feeds/FeedItem.js",
+				"sap/viz/ui5/data/DimensionDefinition.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/data/MeasureDefinition.js"
+			],
+			"included": [
+				"ui/s2p/mm/lib/slonomo/mat/opt2/Component.js",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/manifest.json",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/controller/ObjectPageExt.controller.js",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/BOMSmartTable.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/MovementPopover.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/SMIPlantChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/StockSituationTimeSeriesChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/TimeSeriesChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_sappsd.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_saptrc.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ar.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_bg.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ca.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_cs.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_da.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_de.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_el.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_sappsd.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_saptrc.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_es.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_et.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hu.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_it.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_iw.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ja.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_kk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ko.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lt.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lv.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ms.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_nl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_no.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pt.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ro.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ru.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sh.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sv.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_th.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_tr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_uk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_vi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_CN.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_TW.properties"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/Component-preload.js",
+			"size": 96408,
+			"merged": true,
+			"required": [
+				"sap/chart/data/TimeDimension.js",
+				"sap/m/Label.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/suite/ui/generic/template/lib/AppComponent.js",
+				"sap/suite/ui/microchart/ComparisonMicroChart.js",
+				"sap/suite/ui/microchart/ComparisonMicroChartData.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/model/Filter.js",
+				"sap/viz/ui5/controls/Popover.js",
+				"sap/viz/ui5/controls/VizFrame.js",
+				"sap/viz/ui5/controls/common/feeds/FeedItem.js",
+				"sap/viz/ui5/data/DimensionDefinition.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/data/MeasureDefinition.js"
+			],
+			"included": [
+				"ui/s2p/mm/lib/slonomo/mat/opt2/Component.js",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/controller/ObjectPageExt.controller.js",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/BOMSmartTable.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/MovementPopover.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/SMIPlantChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/StockSituationTimeSeriesChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/TimeSeriesChart.fragment.xml",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_sappsd.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_saptrc.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ar.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_bg.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ca.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_cs.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_da.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_de.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_el.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_sappsd.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_saptrc.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_es.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_et.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hu.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_it.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_iw.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ja.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_kk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ko.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lt.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lv.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ms.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_nl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_no.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pt.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ro.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ru.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sh.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sl.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sv.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_th.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_tr.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_uk.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_vi.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_CN.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_TW.properties",
+				"ui/s2p/mm/lib/slonomo/mat/opt2/manifest.json"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/Component.js",
+			"size": 258,
+			"required": [
+				"sap/suite/ui/generic/template/lib/AppComponent.js"
+			]
+		},
+		{
+			"name": "annotations/annotations.xml",
+			"size": 7557
+		},
+		{
+			"name": "ext/controller/ObjectPageExt-dbg.controller.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/controller/ObjectPageExt.controller.js",
+			"size": 32950,
+			"isDebug": true,
+			"required": [
+				"sap/chart/data/TimeDimension.js",
+				"sap/m/VBox.js",
+				"sap/suite/ui/microchart/ComparisonMicroChart.js",
+				"sap/suite/ui/microchart/ComparisonMicroChartData.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/model/Filter.js"
+			]
+		},
+		{
+			"name": "ext/controller/ObjectPageExt.controller.js",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/controller/ObjectPageExt.controller.js",
+			"size": 16374,
+			"required": [
+				"sap/chart/data/TimeDimension.js",
+				"sap/m/VBox.js",
+				"sap/suite/ui/microchart/ComparisonMicroChart.js",
+				"sap/suite/ui/microchart/ComparisonMicroChartData.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/model/Filter.js"
+			]
+		},
+		{
+			"name": "ext/fragment/BOMSmartTable.fragment.xml",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/BOMSmartTable.fragment.xml",
+			"size": 824,
+			"required": [
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "ext/fragment/MovementPopover.fragment.xml",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/MovementPopover.fragment.xml",
+			"size": 1351,
+			"required": [
+				"sap/m/Label.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/suite/ui/microchart/ComparisonMicroChart.js",
+				"sap/suite/ui/microchart/ComparisonMicroChartData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "ext/fragment/SMIPlantChart.fragment.xml",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/SMIPlantChart.fragment.xml",
+			"size": 2106,
+			"required": [
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/viz/ui5/controls/Popover.js",
+				"sap/viz/ui5/controls/VizFrame.js",
+				"sap/viz/ui5/controls/common/feeds/FeedItem.js",
+				"sap/viz/ui5/data/DimensionDefinition.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/data/MeasureDefinition.js"
+			]
+		},
+		{
+			"name": "ext/fragment/StockSituationTimeSeriesChart.fragment.xml",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/StockSituationTimeSeriesChart.fragment.xml",
+			"size": 2242,
+			"required": [
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/viz/ui5/controls/Popover.js",
+				"sap/viz/ui5/controls/VizFrame.js",
+				"sap/viz/ui5/controls/common/feeds/FeedItem.js",
+				"sap/viz/ui5/data/DimensionDefinition.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/data/MeasureDefinition.js"
+			]
+		},
+		{
+			"name": "ext/fragment/TimeSeriesChart.fragment.xml",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/ext/fragment/TimeSeriesChart.fragment.xml",
+			"size": 2443,
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/viz/ui5/controls/VizFrame.js",
+				"sap/viz/ui5/controls/common/feeds/FeedItem.js",
+				"sap/viz/ui5/data/DimensionDefinition.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/data/MeasureDefinition.js"
+			]
+		},
+		{
+			"name": "i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties",
+			"size": 542,
+			"locale": "",
+			"raw": "i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties"
+		},
+		{
+			"name": "i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_sappsd.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_sappsd.properties",
+			"size": 415,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties"
+		},
+		{
+			"name": "i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_saptrc.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n_en_US_saptrc.properties",
+			"size": 415,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/ListReport/C_SlowOrNonMovingMatlOPgSet/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n.properties",
+			"size": 1280,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ar.properties",
+			"size": 2876,
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_bg.properties",
+			"size": 3525,
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ca.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ca.properties",
+			"size": 1345,
+			"locale": "ca",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_cs.properties",
+			"size": 1537,
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_da.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_da.properties",
+			"size": 1302,
+			"locale": "da",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_de.properties",
+			"size": 1294,
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_el.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_el.properties",
+			"size": 3367,
+			"locale": "el",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en.properties",
+			"size": 1173,
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_sappsd.properties",
+			"size": 3807,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_en_US_saptrc.properties",
+			"size": 1561,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_es.properties",
+			"size": 1343,
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_et.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_et.properties",
+			"size": 1353,
+			"locale": "et",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fi.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fi.properties",
+			"size": 1408,
+			"locale": "fi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_fr.properties",
+			"size": 1319,
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hi.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hi.properties",
+			"size": 2858,
+			"locale": "hi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hr.properties",
+			"size": 1293,
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_hu.properties",
+			"size": 1507,
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_it.properties",
+			"size": 1337,
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_iw.properties",
+			"size": 2313,
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ja.properties",
+			"size": 1528,
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_kk.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_kk.properties",
+			"size": 3069,
+			"locale": "kk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ko.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ko.properties",
+			"size": 1505,
+			"locale": "ko",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lt.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lt.properties",
+			"size": 1336,
+			"locale": "lt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lv.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_lv.properties",
+			"size": 1556,
+			"locale": "lv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ms.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ms.properties",
+			"size": 1255,
+			"locale": "ms",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_nl.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_nl.properties",
+			"size": 1241,
+			"locale": "nl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_no.properties",
+			"size": 1341,
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pl.properties",
+			"size": 1465,
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_pt.properties",
+			"size": 1434,
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ro.properties",
+			"size": 1456,
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_ru.properties",
+			"size": 3526,
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sh.properties",
+			"size": 1284,
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sk.properties",
+			"size": 1548,
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sl.properties",
+			"size": 1235,
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sv.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_sv.properties",
+			"size": 1393,
+			"locale": "sv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_th.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_th.properties",
+			"size": 3328,
+			"locale": "th",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_tr.properties",
+			"size": 1471,
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_uk.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_uk.properties",
+			"size": 3251,
+			"locale": "uk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_vi.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_vi.properties",
+			"size": 2054,
+			"locale": "vi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_CN.properties",
+			"size": 1528,
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_TW.properties",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/i18n/i18n_zh_TW.properties",
+			"size": 1508,
+			"locale": "zh_TW",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "localService/MMIM_SLOWORNONMOVING_ANNO_MDL_02.xml",
+			"size": 38790
+		},
+		{
+			"name": "localService/metadata.xml",
+			"size": 129610
+		},
+		{
+			"name": "localService/mockserver-dbg.js",
+			"size": 3651,
+			"isDebug": true
+		},
+		{
+			"name": "localService/mockserver.js",
+			"size": 1654
+		},
+		{
+			"name": "manifest.json",
+			"module": "ui/s2p/mm/lib/slonomo/mat/opt2/manifest.json",
+			"size": 5465
+		},
+		{
+			"name": "resources.json",
+			"size": 16884
+		},
+		{
+			"name": "version.json",
+			"size": 208
+		}
+	]
+}

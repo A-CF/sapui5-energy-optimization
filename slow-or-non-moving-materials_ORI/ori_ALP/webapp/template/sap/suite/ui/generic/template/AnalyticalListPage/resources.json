@@ -1,0 +1,768 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 17451,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 4993
+		},
+		{
+			"name": "control/KpiProvider-dbg.js",
+			"size": 7924,
+			"isDebug": true
+		},
+		{
+			"name": "control/KpiProvider.js",
+			"size": 4043
+		},
+		{
+			"name": "control/SmartFilterBarExt-dbg.js",
+			"size": 2630,
+			"isDebug": true
+		},
+		{
+			"name": "control/SmartFilterBarExt.js",
+			"size": 962
+		},
+		{
+			"name": "control/SmartKpiTag-dbg.designtime.js",
+			"size": 697,
+			"isDebug": true,
+			"designtime": true
+		},
+		{
+			"name": "control/SmartKpiTag-dbg.js",
+			"size": 41743,
+			"isDebug": true
+		},
+		{
+			"name": "control/SmartKpiTag.designtime.js",
+			"size": 443,
+			"designtime": true
+		},
+		{
+			"name": "control/SmartKpiTag.js",
+			"size": 22810
+		},
+		{
+			"name": "control/visualfilterbar/FilterItem-dbg.js",
+			"size": 2578,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/FilterItem.js",
+			"size": 2075
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroBar-dbg.js",
+			"size": 2158,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroBar.js",
+			"size": 1534
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroChart-dbg.js",
+			"size": 61411,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroChart.js",
+			"size": 27751
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroDonut-dbg.js",
+			"size": 7541,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroDonut.js",
+			"size": 3362
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroLine-dbg.js",
+			"size": 2272,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/FilterItemMicroLine.js",
+			"size": 1615
+		},
+		{
+			"name": "control/visualfilterbar/SmartVisualFilterBar-dbg.designtime.js",
+			"size": 588,
+			"isDebug": true,
+			"designtime": true
+		},
+		{
+			"name": "control/visualfilterbar/SmartVisualFilterBar-dbg.js",
+			"size": 57052,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/SmartVisualFilterBar.designtime.js",
+			"size": 384,
+			"designtime": true
+		},
+		{
+			"name": "control/visualfilterbar/SmartVisualFilterBar.js",
+			"size": 28059
+		},
+		{
+			"name": "control/visualfilterbar/VisualFilterProvider-dbg.js",
+			"size": 45893,
+			"isDebug": true
+		},
+		{
+			"name": "control/visualfilterbar/VisualFilterProvider.js",
+			"size": 16823
+		},
+		{
+			"name": "controller/AnalyticGridController-dbg.js",
+			"size": 1485,
+			"isDebug": true
+		},
+		{
+			"name": "controller/AnalyticGridController.js",
+			"size": 904
+		},
+		{
+			"name": "controller/ContentAreaController-dbg.js",
+			"size": 2508,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ContentAreaController.js",
+			"size": 1537
+		},
+		{
+			"name": "controller/ControllerImplementation-dbg.js",
+			"size": 50783,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ControllerImplementation.js",
+			"size": 24458
+		},
+		{
+			"name": "controller/DatePickerController-dbg.js",
+			"size": 4111,
+			"isDebug": true
+		},
+		{
+			"name": "controller/DatePickerController.js",
+			"size": 2352
+		},
+		{
+			"name": "controller/DetailController-dbg.js",
+			"size": 36175,
+			"isDebug": true
+		},
+		{
+			"name": "controller/DetailController.js",
+			"size": 14819
+		},
+		{
+			"name": "controller/DropDownController-dbg.js",
+			"size": 18289,
+			"isDebug": true
+		},
+		{
+			"name": "controller/DropDownController.js",
+			"size": 9082
+		},
+		{
+			"name": "controller/FilterBarController-dbg.js",
+			"size": 11797,
+			"isDebug": true
+		},
+		{
+			"name": "controller/FilterBarController.js",
+			"size": 5884
+		},
+		{
+			"name": "controller/IappStateHandler-dbg.js",
+			"size": 35291,
+			"isDebug": true
+		},
+		{
+			"name": "controller/IappStateHandler.js",
+			"size": 13139
+		},
+		{
+			"name": "controller/KpiCardController-dbg.js",
+			"size": 12392,
+			"isDebug": true
+		},
+		{
+			"name": "controller/KpiCardController.js",
+			"size": 5290
+		},
+		{
+			"name": "controller/KpiTagController-dbg.js",
+			"size": 7296,
+			"isDebug": true
+		},
+		{
+			"name": "controller/KpiTagController.js",
+			"size": 3817
+		},
+		{
+			"name": "controller/SmartChartController-dbg.js",
+			"size": 13519,
+			"isDebug": true
+		},
+		{
+			"name": "controller/SmartChartController.js",
+			"size": 7200
+		},
+		{
+			"name": "controller/ToolbarController-dbg.js",
+			"size": 4666,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ToolbarController.js",
+			"size": 2644
+		},
+		{
+			"name": "controller/VisualFilterBarController-dbg.js",
+			"size": 502,
+			"isDebug": true
+		},
+		{
+			"name": "controller/VisualFilterBarController.js",
+			"size": 367
+		},
+		{
+			"name": "controller/VisualFilterDialogController-dbg.js",
+			"size": 71767,
+			"isDebug": true
+		},
+		{
+			"name": "controller/VisualFilterDialogController.js",
+			"size": 40607
+		},
+		{
+			"name": "controllerFrameworkExtensions-dbg.js",
+			"size": 8544,
+			"isDebug": true
+		},
+		{
+			"name": "controllerFrameworkExtensions.js",
+			"size": 741
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI-dbg.js",
+			"size": 8870,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI.js",
+			"size": 1946
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"size": 9819,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"size": 12496,
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"size": 15218,
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ca.properties",
+			"size": 5116,
+			"locale": "ca",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"size": 5415,
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cy.properties",
+			"size": 4725,
+			"locale": "cy",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_da.properties",
+			"size": 4687,
+			"locale": "da",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"size": 5096,
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_el.properties",
+			"size": 14618,
+			"locale": "el",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"size": 4462,
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_GB.properties",
+			"size": 4468,
+			"locale": "en_GB",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"size": 21678,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"size": 6468,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"size": 5101,
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es_MX.properties",
+			"size": 5085,
+			"locale": "es_MX",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_et.properties",
+			"size": 5009,
+			"locale": "et",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fi.properties",
+			"size": 5305,
+			"locale": "fi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"size": 5331,
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr_CA.properties",
+			"size": 5410,
+			"locale": "fr_CA",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hi.properties",
+			"size": 13091,
+			"locale": "hi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"size": 4947,
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"size": 6301,
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_id.properties",
+			"size": 4697,
+			"locale": "id",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"size": 4895,
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"size": 10876,
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"size": 8538,
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_kk.properties",
+			"size": 14257,
+			"locale": "kk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ko.properties",
+			"size": 7249,
+			"locale": "ko",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lt.properties",
+			"size": 5616,
+			"locale": "lt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lv.properties",
+			"size": 5658,
+			"locale": "lv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ms.properties",
+			"size": 4717,
+			"locale": "ms",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_nl.properties",
+			"size": 4726,
+			"locale": "nl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"size": 4719,
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"size": 5468,
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"size": 5214,
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt_PT.properties",
+			"size": 5144,
+			"locale": "pt_PT",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"size": 5412,
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"size": 14455,
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"size": 4953,
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"size": 5679,
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"size": 4923,
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sr.properties",
+			"size": 14081,
+			"locale": "sr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sv.properties",
+			"size": 4800,
+			"locale": "sv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_th.properties",
+			"size": 13818,
+			"locale": "th",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"size": 5698,
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_uk.properties",
+			"size": 14633,
+			"locale": "uk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_vi.properties",
+			"size": 8296,
+			"locale": "vi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"size": 6160,
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_TW.properties",
+			"size": 6233,
+			"locale": "zh_TW",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "manifest.json",
+			"size": 2081
+		},
+		{
+			"name": "resources.json",
+			"size": 5567
+		},
+		{
+			"name": "style/alr_readme.txt",
+			"size": 965
+		},
+		{
+			"name": "style/crosstab_library.css",
+			"size": 110961
+		},
+		{
+			"name": "style/img/readme.txt",
+			"size": 204
+		},
+		{
+			"name": "style/img/sort_asc.gif",
+			"size": 55
+		},
+		{
+			"name": "style/img/sort_desc.gif",
+			"size": 56
+		},
+		{
+			"name": "style/img/sort_none.gif",
+			"size": 59
+		},
+		{
+			"name": "style/img/treenode_collapse.gif",
+			"size": 113
+		},
+		{
+			"name": "style/img/treenode_expand.gif",
+			"size": 113
+		},
+		{
+			"name": "util/AnnotationHelper-dbg.js",
+			"size": 18326,
+			"isDebug": true
+		},
+		{
+			"name": "util/AnnotationHelper.js",
+			"size": 7795
+		},
+		{
+			"name": "util/CommonUtil-dbg.js",
+			"size": 495,
+			"isDebug": true
+		},
+		{
+			"name": "util/CommonUtil.js",
+			"size": 246
+		},
+		{
+			"name": "util/CriticalityUtil-dbg.js",
+			"size": 13033,
+			"isDebug": true
+		},
+		{
+			"name": "util/CriticalityUtil.js",
+			"size": 5866
+		},
+		{
+			"name": "util/FilterUtil-dbg.js",
+			"size": 30345,
+			"isDebug": true
+		},
+		{
+			"name": "util/FilterUtil.js",
+			"size": 10259
+		},
+		{
+			"name": "util/KpiAnnotationHelper-dbg.js",
+			"size": 5096,
+			"isDebug": true
+		},
+		{
+			"name": "util/KpiAnnotationHelper.js",
+			"size": 2830
+		},
+		{
+			"name": "util/KpiUtil-dbg.js",
+			"size": 9988,
+			"isDebug": true
+		},
+		{
+			"name": "util/KpiUtil.js",
+			"size": 3610
+		},
+		{
+			"name": "util/OperationCode-dbg.js",
+			"size": 551,
+			"isDebug": true
+		},
+		{
+			"name": "util/OperationCode.js",
+			"size": 323
+		},
+		{
+			"name": "util/V4Terms-dbg.js",
+			"size": 1390,
+			"isDebug": true
+		},
+		{
+			"name": "util/V4Terms.js",
+			"size": 1168
+		},
+		{
+			"name": "view/AnalyticalListPage.view.xml",
+			"size": 10237
+		},
+		{
+			"name": "view/KpiCardSizeM.view.xml",
+			"size": 525
+		},
+		{
+			"name": "view/fragments/ActionsFragment.fragment.xml",
+			"size": 1380
+		},
+		{
+			"name": "view/fragments/AnalyticGrid.fragment.xml",
+			"size": 1013
+		},
+		{
+			"name": "view/fragments/AnalyticalTableColumns.fragment.xml",
+			"size": 4428
+		},
+		{
+			"name": "view/fragments/ChartActions.fragment.xml",
+			"size": 1087
+		},
+		{
+			"name": "view/fragments/ContentAreaViewExtension.fragment.xml",
+			"size": 1006
+		},
+		{
+			"name": "view/fragments/ContentAreaViewExtension2.fragment.xml",
+			"size": 1008
+		},
+		{
+			"name": "view/fragments/ContentContainer.fragment.xml",
+			"size": 3920
+		},
+		{
+			"name": "view/fragments/ContentViewButtons.fragment.xml",
+			"size": 2197
+		},
+		{
+			"name": "view/fragments/DetailSmartTable.fragment.xml",
+			"size": 16765
+		},
+		{
+			"name": "view/fragments/DraftInfoBox.fragment.xml",
+			"size": 580
+		},
+		{
+			"name": "view/fragments/FilterContainer.fragment.xml",
+			"size": 2430
+		},
+		{
+			"name": "view/fragments/FilterableKPIContainer.fragment.xml",
+			"size": 1140
+		},
+		{
+			"name": "view/fragments/GridTableColumns.fragment.xml",
+			"size": 3838
+		},
+		{
+			"name": "view/fragments/HeaderCommands.fragment.xml",
+			"size": 476
+		},
+		{
+			"name": "view/fragments/KPITagList.fragment.xml",
+			"size": 1180
+		},
+		{
+			"name": "view/fragments/KpiCard.fragment.xml",
+			"size": 674
+		},
+		{
+			"name": "view/fragments/MasterExtension.fragment.xml",
+			"size": 1006
+		},
+		{
+			"name": "view/fragments/SmartChart.fragment.xml",
+			"size": 3965
+		},
+		{
+			"name": "view/fragments/SmartChartToolbar.fragment.xml",
+			"size": 1402
+		},
+		{
+			"name": "view/fragments/SmartFilterBar.fragment.xml",
+			"size": 7106
+		},
+		{
+			"name": "view/fragments/SmartTableToolbar.fragment.xml",
+			"size": 1874
+		}
+	]
+}

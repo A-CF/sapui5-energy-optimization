@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema Namespace="MMIM_MATERIAL_DATA_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+<EntityType Name="Plant4UserHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Plant"/>
+</Key>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="PlantName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="Material4PlantHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Batch"/>
+</Key>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="40" Name="MaterialName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MaterialHeader" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="40" Name="MaterialName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="MaterialType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="25" Name="MaterialTypeName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description of Material Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="BaseUnitName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Unit of Measurement Text" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="DefinitionOfBatchLevel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Definition of Batch Management Level" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Target Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="AlternativeUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Alternative Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="AlternativeUnitName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Alternative Unit of Measurement Text" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<NavigationProperty FromRole="FromRole_MaterialPlantItems" Name="Material2Plants" Relationship="MMIM_MATERIAL_DATA_SRV.MaterialPlantItems" ToRole="ToRole_MaterialPlantItems"/>
+<NavigationProperty FromRole="FromRole_Material2Auoms" Name="Material2Auoms" Relationship="MMIM_MATERIAL_DATA_SRV.Material2Auoms" ToRole="ToRole_Material2Auoms"/>
+<NavigationProperty FromRole="FromRole_Material2PlantsHelps" Name="Material2PlantsHelps" Relationship="MMIM_MATERIAL_DATA_SRV.Material2PlantsHelps" ToRole="ToRole_Material2PlantsHelps"/>
+</EntityType>
+<EntityType Name="MaterialPlant" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="PlantName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="16" Name="StorageLocationName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description of Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ShelfLifeExpirationDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Shelf Life Expiration Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ManufactureDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Manufacture Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Target Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="SafetyStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Safety Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="MinimumSafetyStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Minimum Safety Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Unrestricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockPlantQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Plant)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="StockInTransitQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Transit" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TiedEmptiesStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Tied Empties" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="GoodsReceiptBlockedStockQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Valuated Goods Receipt Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="NonVltdGRBlockedStockQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Goods Receipt Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="IsNegativeStockAllowed" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Negative Stocks in Plant Allowed" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BatchInRestrictedUseStock" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Batch in Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="IsQualityManagedMaterial" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Is Quality Managed Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="MaterialIsBatchManaged" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Is Batch Managed Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<NavigationProperty FromRole="FromRole_MatPlantMatPlantStockHistory" Name="MatPlant2MatPlantStockHistory" Relationship="MMIM_MATERIAL_DATA_SRV.MatPlantMatPlantStockHistory" ToRole="ToRole_MatPlantMatPlantStockHistory"/>
+<NavigationProperty FromRole="FromRole_MaterialPlantMatPlSpecial" Name="MaterialPlant2MatPlSpecial" Relationship="MMIM_MATERIAL_DATA_SRV.MaterialPlantMatPlSpecial" ToRole="ToRole_MaterialPlantMatPlSpecial"/>
+<NavigationProperty FromRole="FromRole_PlantStorLocItems" Name="Plant2StorLocs" Relationship="MMIM_MATERIAL_DATA_SRV.PlantStorLocItems" ToRole="ToRole_PlantStorLocItems"/>
+</EntityType>
+<EntityType Name="MaterialStorLoc" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="Batch"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="16" Name="StorageLocationName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description of Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="WarehouseStorageBin" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Bin" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="StorLocIsAutomaticallyCreated" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Automatic creation of storage location allowed" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Target Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Unrestricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<NavigationProperty FromRole="FromRole_MatStorLocMatStorLocStockHis" Name="MatStorLoc2MatStorLocStockHis" Relationship="MMIM_MATERIAL_DATA_SRV.MatStorLocMatStorLocStockHis" ToRole="ToRole_MatStorLocMatStorLocStockHis"/>
+<NavigationProperty FromRole="FromRole_MaterialStorLocMatStorLocSpecial" Name="MatStorLoc2MatStorLocSpecial" Relationship="MMIM_MATERIAL_DATA_SRV.MaterialStorLocMatStorLocSpecial" ToRole="ToRole_MaterialStorLocMatStorLocSpecial"/>
+</EntityType>
+<EntityType Name="MaterialPlantHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="PlantName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="16" Name="StorageLocationName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description of Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Target Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Valuated Unrestricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockPlantQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Plant)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="StockInTransitQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Transit" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TiedEmptiesStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Tied Empties" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="GoodsReceiptBlockedStockQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Valuated Goods Receipt Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<NavigationProperty FromRole="FromRole_MaterialPlant2StorLocsHelps" Name="MaterialPlant2StorLocsHelps" Relationship="MMIM_MATERIAL_DATA_SRV.MaterialPlant2StorLocsHelps" ToRole="ToRole_MaterialPlant2StorLocsHelps"/>
+</EntityType>
+<EntityType Name="MaterialStorLocHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="StorageLocation"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="16" Name="StorageLocationName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description of Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="WarehouseStorageBin" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Bin" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="StorLocAutoCreationIsAllowed" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Automatic creation of storage location allowed" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="StockType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Stock Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="IsReturnsItem" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Returns Item" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="InventorySpecialStockType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Special Stock Indicator" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Target Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Valuated Unrestricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MaterialHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="40" Name="MaterialName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MaterialPlantSpecial" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="InventorySpecialStockType"/>
+<PropertyRef Name="InventoryStockType"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="InventorySpecialStockType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Special Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="2" Name="InventoryStockType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Stock Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="AssignmentReference" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Reference Field" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="Quantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Quantity" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="60" Name="InventorySpecialStockTypeName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Special Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MaterialStorLocSpecial" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="InventorySpecialStockType"/>
+<PropertyRef Name="InventoryStockType"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="InventorySpecialStockType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Special Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="2" Name="InventoryStockType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Stock Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="AssignmentReference" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Reference Field" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="Quantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Quantity" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="60" Name="InventorySpecialStockTypeName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Special Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MatPlStockHistory" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="FiscalYear"/>
+<PropertyRef Name="FiscalPeriod"/>
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="PostingDate"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="FiscalYear" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Year cur.period" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="2" Name="FiscalPeriod" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Current period" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="PostingDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Posting Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="PeriodType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Period Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Calendar Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Unrestricted" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockPlantQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Plant)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="StockInTransitQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Transit" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TiedEmptiesStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Tied Empties" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="GoodsReceiptBlockedStockQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Valuated Goods Receipt Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MatStorLocStockHis" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="FiscalYear"/>
+<PropertyRef Name="FiscalPeriod"/>
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="PostingDate"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="StorageLocation" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Storage Location" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="FiscalYear" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Year Current Period" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="2" Name="FiscalPeriod" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Current period" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="PostingDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Posting Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="1" Name="PeriodType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Period Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CalendarDate" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Calendar Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Unrestricted" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MaterialGenHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="MaterialType"/>
+<PropertyRef Name="ProductHierarchy"/>
+<PropertyRef Name="Supplier"/>
+<PropertyRef Name="Plant"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="40" Name="MaterialName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="MaterialType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="25" Name="MaterialTypeName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description of Material Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="18" Name="ProductHierarchy" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Product Hierarchy" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Supplier" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Supplier" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="35" Name="SupplierName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Supplier Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="PlantName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="I_InvtryMgmtMatlMstrVHType" sap:content-version="1" sap:label="Invtry Management Materials">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Plant"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Batch" sap:quickinfo="Batch Number"/>
+<Property MaxLength="40" Name="MaterialName" Type="Edm.String" sap:label="Material Description"/>
+<Property MaxLength="30" Name="PlantName" Type="Edm.String" sap:label="Plant Name"/>
+<Property Name="BatchIsMarkedForDeletion" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Batch Deletion Flag" sap:quickinfo="Deletion Flag for All Data in a Batch"/>
+<Property Name="BatIsMrkdForDeltnInPlnt" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Batch Deletion Flag" sap:quickinfo="Deletion Flag for All Data on a Batch at a Plant"/>
+<Property Name="ShelfLifeExpirationDate" Precision="0" Type="Edm.DateTime" sap:display-format="Date" sap:label="SLED/BBD" sap:quickinfo="Shelf Life Expiration or Best-Before Date"/>
+<Property MaxLength="4" Name="MaterialType" Type="Edm.String" sap:display-format="UpperCase" sap:label="Material Type"/>
+<Property MaxLength="25" Name="MaterialTypeName" Type="Edm.String" sap:label="Material Type Descr." sap:quickinfo="Description of Material Type"/>
+<Property MaxLength="18" Name="ProductHierarchy" Type="Edm.String" sap:display-format="UpperCase" sap:label="Product Hierarchy"/>
+<Property MaxLength="4" Name="AuthorizationGroup" Type="Edm.String" sap:display-format="UpperCase" sap:label="Authorization Group"/>
+</EntityType>
+<EntityType Name="I_InvtryMgmtSuplrInfoRecdVHType" sap:content-version="1" sap:label="Invtry Management Materials">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="Supplier"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Plant"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Batch" sap:quickinfo="Batch Number"/>
+<Property MaxLength="10" Name="Supplier" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Supplier" sap:quickinfo="Supplier's Account Number"/>
+<Property MaxLength="40" Name="MaterialName" Type="Edm.String" sap:label="Material Description"/>
+<Property MaxLength="30" Name="PlantName" Type="Edm.String" sap:label="Plant Name"/>
+<Property Name="BatchIsMarkedForDeletion" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Batch Deletion Flag" sap:quickinfo="Deletion Flag for All Data in a Batch"/>
+<Property Name="BatIsMrkdForDeltnInPlnt" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Batch Deletion Flag" sap:quickinfo="Deletion Flag for All Data on a Batch at a Plant"/>
+<Property Name="ShelfLifeExpirationDate" Precision="0" Type="Edm.DateTime" sap:display-format="Date" sap:label="SLED/BBD" sap:quickinfo="Shelf Life Expiration or Best-Before Date"/>
+<Property MaxLength="4" Name="MaterialType" Type="Edm.String" sap:display-format="UpperCase" sap:label="Material Type"/>
+<Property MaxLength="25" Name="MaterialTypeName" Type="Edm.String" sap:label="Material Type Descr." sap:quickinfo="Description of Material Type"/>
+<Property MaxLength="18" Name="ProductHierarchy" Type="Edm.String" sap:display-format="UpperCase" sap:label="Product Hierarchy"/>
+<Property MaxLength="35" Name="SupplierName" Type="Edm.String" sap:label="Name" sap:quickinfo="Name 1"/>
+<Property MaxLength="4" Name="SupplierBasicAuthorizationGrp" Type="Edm.String" sap:display-format="UpperCase" sap:label="Authorization" sap:quickinfo="Authorization Group"/>
+</EntityType>
+<EntityType Name="MaterialAuom" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="AlternativeUnit"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="AlternativeUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Alternative Unit" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="30" Name="AlternativeUnitName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Meas. unit text" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="Numerator" Nullable="false" Precision="16" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Numerator" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="Denominator" Nullable="false" Precision="16" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Denominator" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="IsDerived" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Is derived" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="IsBaseUnit" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Is Base Unit" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="MaterialBatchHelp" sap:content-version="1">
+<Key>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+</Key>
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="10" Name="Batch" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Batch" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="CurrentStock" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Unrestricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="QualityInspectionStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock in Quality Inspection" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="ReturnsBlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Returns" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="TransferStockStorageLocQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Stock Transfer (Storage Location)" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="BlockedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="RestrictedStockQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Restricted-Use Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property Name="GoodsReceiptBlockedStockQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Valuated Goods Receipt Blocked Stock" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+<Property MaxLength="3" Name="BaseUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+</EntityType>
+<ComplexType Name="RangeOfCoverage">
+<Property MaxLength="40" Name="Material" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Material" sap:sortable="false" sap:updatable="false"/>
+<Property MaxLength="4" Name="Plant" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plant" sap:sortable="false" sap:updatable="false"/>
+<Property Name="RangeOfCoverageInDays" Nullable="false" Precision="7" Scale="2" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Range of Coverage in Days" sap:sortable="false" sap:updatable="false"/>
+</ComplexType>
+<Association Name="MaterialPlant2StorLocsHelps" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_MaterialPlant2StorLocsHelps" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlantHelp"/>
+<End Multiplicity="*" Role="ToRole_MaterialPlant2StorLocsHelps" Type="MMIM_MATERIAL_DATA_SRV.MaterialStorLocHelp"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_MaterialPlant2StorLocsHelps">
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Principal>
+<Dependent Role="ToRole_MaterialPlant2StorLocsHelps">
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="MaterialPlantMatPlSpecial" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_MaterialPlantMatPlSpecial" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlant"/>
+<End Multiplicity="*" Role="ToRole_MaterialPlantMatPlSpecial" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlantSpecial"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_MaterialPlantMatPlSpecial">
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+</Principal>
+<Dependent Role="ToRole_MaterialPlantMatPlSpecial">
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Batch"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="MatPlantMatPlantStockHistory" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_MatPlantMatPlantStockHistory" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlant"/>
+<End Multiplicity="*" Role="ToRole_MatPlantMatPlantStockHistory" Type="MMIM_MATERIAL_DATA_SRV.MatPlStockHistory"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_MatPlantMatPlantStockHistory">
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Principal>
+<Dependent Role="ToRole_MatPlantMatPlantStockHistory">
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="PlantStorLocItems" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_PlantStorLocItems" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlant"/>
+<End Multiplicity="*" Role="ToRole_PlantStorLocItems" Type="MMIM_MATERIAL_DATA_SRV.MaterialStorLoc"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_PlantStorLocItems">
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Principal>
+<Dependent Role="ToRole_PlantStorLocItems">
+<PropertyRef Name="Batch"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="MaterialPlantItems" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_MaterialPlantItems" Type="MMIM_MATERIAL_DATA_SRV.MaterialHeader"/>
+<End Multiplicity="*" Role="ToRole_MaterialPlantItems" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlant"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_MaterialPlantItems">
+<PropertyRef Name="Material"/>
+</Principal>
+<Dependent Role="ToRole_MaterialPlantItems">
+<PropertyRef Name="Material"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="Material2Auoms" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_Material2Auoms" Type="MMIM_MATERIAL_DATA_SRV.MaterialHeader"/>
+<End Multiplicity="*" Role="ToRole_Material2Auoms" Type="MMIM_MATERIAL_DATA_SRV.MaterialAuom"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_Material2Auoms">
+<PropertyRef Name="Material"/>
+</Principal>
+<Dependent Role="ToRole_Material2Auoms">
+<PropertyRef Name="Material"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="Material2PlantsHelps" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_Material2PlantsHelps" Type="MMIM_MATERIAL_DATA_SRV.MaterialHeader"/>
+<End Multiplicity="*" Role="ToRole_Material2PlantsHelps" Type="MMIM_MATERIAL_DATA_SRV.MaterialPlantHelp"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_Material2PlantsHelps">
+<PropertyRef Name="Material"/>
+</Principal>
+<Dependent Role="ToRole_Material2PlantsHelps">
+<PropertyRef Name="Material"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="MaterialStorLocMatStorLocSpecial" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_MaterialStorLocMatStorLocSpecial" Type="MMIM_MATERIAL_DATA_SRV.MaterialStorLoc"/>
+<End Multiplicity="*" Role="ToRole_MaterialStorLocMatStorLocSpecial" Type="MMIM_MATERIAL_DATA_SRV.MaterialStorLocSpecial"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_MaterialStorLocMatStorLocSpecial">
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="Batch"/>
+</Principal>
+<Dependent Role="ToRole_MaterialStorLocMatStorLocSpecial">
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="Batch"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="MatStorLocMatStorLocStockHis" sap:content-version="1">
+<End Multiplicity="1" Role="FromRole_MatStorLocMatStorLocStockHis" Type="MMIM_MATERIAL_DATA_SRV.MaterialStorLoc"/>
+<End Multiplicity="*" Role="ToRole_MatStorLocMatStorLocStockHis" Type="MMIM_MATERIAL_DATA_SRV.MatStorLocStockHis"/>
+<ReferentialConstraint>
+<Principal Role="FromRole_MatStorLocMatStorLocStockHis">
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Batch"/>
+</Principal>
+<Dependent Role="ToRole_MatStorLocMatStorLocStockHis">
+<PropertyRef Name="StorageLocation"/>
+<PropertyRef Name="Plant"/>
+<PropertyRef Name="Material"/>
+<PropertyRef Name="Batch"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<EntityContainer Name="MMIM_MATERIAL_DATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.Plant4UserHelp" Name="Plant4UserHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.Material4PlantHelp" Name="Material4PlantHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialHeader" Name="MaterialHeaders" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialPlant" Name="MaterialPlants" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialStorLoc" Name="MaterialStorLocs" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialPlantHelp" Name="MaterialPlantHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialStorLocHelp" Name="MaterialStorLocHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialHelp" Name="MaterialHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialPlantSpecial" Name="MaterialPlantSpecials" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialStorLocSpecial" Name="MaterialStorLocSpecials" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MatPlStockHistory" Name="MatPlStockHistorys" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MatStorLocStockHis" Name="MatStorLocStockHiss" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialGenHelp" Name="MaterialGenHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType" Name="I_InvtryMgmtMatlMstrVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType" Name="I_InvtryMgmtSuplrInfoRecdVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialAuom" Name="MaterialAuoms" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<EntitySet EntityType="MMIM_MATERIAL_DATA_SRV.MaterialBatchHelp" Name="MaterialBatchHelps" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.PlantStorLocItems" Name="PlantStorLocItemsSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialPlants" Role="FromRole_PlantStorLocItems"/>
+<End EntitySet="MaterialStorLocs" Role="ToRole_PlantStorLocItems"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.MatStorLocMatStorLocStockHis" Name="MatStorLocMatStorLocStockHisSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialStorLocs" Role="FromRole_MatStorLocMatStorLocStockHis"/>
+<End EntitySet="MatStorLocStockHiss" Role="ToRole_MatStorLocMatStorLocStockHis"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.MatPlantMatPlantStockHistory" Name="MatPlantMatPlantStockHistorySet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialPlants" Role="FromRole_MatPlantMatPlantStockHistory"/>
+<End EntitySet="MatPlStockHistorys" Role="ToRole_MatPlantMatPlantStockHistory"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.Material2PlantsHelps" Name="Material2PlantsHelpSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialHeaders" Role="FromRole_Material2PlantsHelps"/>
+<End EntitySet="MaterialPlantHelps" Role="ToRole_Material2PlantsHelps"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.MaterialPlant2StorLocsHelps" Name="MaterialPlant2StorLocsHelpSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialPlantHelps" Role="FromRole_MaterialPlant2StorLocsHelps"/>
+<End EntitySet="MaterialStorLocHelps" Role="ToRole_MaterialPlant2StorLocsHelps"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.MaterialStorLocMatStorLocSpecial" Name="MaterialStorLocMatStorLocSpecialSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialStorLocs" Role="FromRole_MaterialStorLocMatStorLocSpecial"/>
+<End EntitySet="MaterialStorLocSpecials" Role="ToRole_MaterialStorLocMatStorLocSpecial"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.MaterialPlantItems" Name="MaterialPlantItemsSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialHeaders" Role="FromRole_MaterialPlantItems"/>
+<End EntitySet="MaterialPlants" Role="ToRole_MaterialPlantItems"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.Material2Auoms" Name="Material2AuomsSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialHeaders" Role="FromRole_Material2Auoms"/>
+<End EntitySet="MaterialAuoms" Role="ToRole_Material2Auoms"/>
+</AssociationSet>
+<AssociationSet Association="MMIM_MATERIAL_DATA_SRV.MaterialPlantMatPlSpecial" Name="MaterialPlantMatPlSpecialSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+<End EntitySet="MaterialPlants" Role="FromRole_MaterialPlantMatPlSpecial"/>
+<End EntitySet="MaterialPlantSpecials" Role="ToRole_MaterialPlantMatPlSpecial"/>
+</AssociationSet>
+<FunctionImport Name="MaterialPlantKPI" ReturnType="Collection(MMIM_MATERIAL_DATA_SRV.RangeOfCoverage)" m:HttpMethod="GET">
+<Parameter MaxLength="4" Mode="In" Name="Plant" Type="Edm.String"/>
+<Parameter MaxLength="40" Mode="In" Name="Material" Type="Edm.String"/>
+</FunctionImport>
+</EntityContainer>
+<atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/>
+<atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

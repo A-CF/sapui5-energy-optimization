@@ -1,0 +1,11 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="idCostCenterDialog" noDataText="{i18n>LABEL_COST_CENTER_NO_DATA}" title="{i18n>COST_CENTER_TITEL}" search="onCostCenterFilterBarSearch"
+		items="{/CostCenters}">
+		<StandardListItem title="{key}" description="{text}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,33 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:commons="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:smartChart="sap.ui.comp.smartchart" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:sfi="sap.ui.comp.smartfield" xmlns:sfo="sap.ui.comp.smartform" xmlns:table="sap.ui.table"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:uxap="sap.uxap" xmlns="sap.m">
+	<VBox id="idVBoxStkSituationViz">
+		<viz:Popover id="idStockVizFramePopover" resizable="true"></viz:Popover>
+		<viz:VizFrame id="idStockVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='info/dual_combination' height='400px' width="100%" selectData="handleDataSelect">
+			<viz:dataset>
+				<viz.data:FlattenedDataset id="idStkSitVizFlattenedDataset">
+					<viz.data:dimensions>
+						<viz.data:DimensionDefinition id="idDimDefYearPeriod" name="{i18n>PERIOD}" value="{ path: 'YearPeriod', formatter: '._yearMonthFormatter' }"/>
+					</viz.data:dimensions>
+					<viz.data:measures>
+						<viz.data:MeasureDefinition id="idMeaDefMatWrhsStkQty" name="{i18n>STOCK_QUANTITY}" value="{MatlWrhsStkQtyInMatlBaseUnit}"/>
+						<viz.data:MeasureDefinition id="idMeaDefCnsmpnQty" name="{i18n>STOCK_CONSUMPTION}" value="{CnsmpnQtyInBaseUnitOnRefDate}"/>
+						<viz.data:MeasureDefinition id="idMeaDefNrOfBOM" name="{i18n>BOM_USAGE}" value="{NumberOfBOMUsingTheMaterial}"/>
+					</viz.data:measures>
+				</viz.data:FlattenedDataset>
+			</viz:dataset>
+			<viz:feeds>
+				<viz.feeds:FeedItem id="idFeedItemMeasureBOM" uid="valueAxis" type="Measure" values="{ parts:['i18n>BOM_USAGE'], formatter:'.feedValuesFormatter' }"/>
+				<viz.feeds:FeedItem id="idFeedItemMeasureStkQty" uid="valueAxis2" type="Measure" values="{ parts:['i18n>STOCK_QUANTITY', 'i18n>STOCK_CONSUMPTION'], formatter:'.feedValuesFormatter' }"/>
+				<viz.feeds:FeedItem id="idFeedItemDimPeriod" uid="categoryAxis" type="Dimension"
+					values="{ parts:['i18n>PERIOD'], formatter:'.feedValuesFormatter' }"/>
+			</viz:feeds>
+		</viz:VizFrame>
+	</VBox>
+</core:FragmentDefinition>

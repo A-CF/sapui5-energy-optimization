@@ -1,0 +1,22 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog id="idSelectAUoMDialog" 
+		noDataText="{i18n>AUOM_VALUE_HELP_NO_DATA}"
+		title="{i18n>AUOM_VALUE_HELP_TITLE}"
+		search="_handleAUoMSearch"
+		items="{path: 'oAUoMCollection>/AUoMCollection',
+		       templateShareable: false, groupHeaderFactory: '._getGroupHeader' }"
+		 >
+		<StandardListItem id="idAUoM" 
+			title="{oAUoMCollection>AUoMName}"
+			description="{oAUoMCollection>AUoM}"
+			info="{oAUoMCollection>RatioToBaseUnit}"
+			type="Active"  />
+	</SelectDialog>
+</core:FragmentDefinition>

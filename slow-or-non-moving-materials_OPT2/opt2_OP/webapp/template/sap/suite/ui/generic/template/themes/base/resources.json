@@ -1,0 +1,171 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 64,
+			"theme": "base"
+		},
+		{
+			"name": "ALPConstants.less",
+			"size": 3100,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "AnalyticalListPage.less",
+			"size": 15986,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ListReport.less",
+			"size": 864,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ObjectPage.less",
+			"size": 13123,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "QuickCreate.less",
+			"size": 1620,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "QuickView.less",
+			"size": 2400,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "alr_zen.css",
+			"size": 4547,
+			"theme": "base"
+		},
+		{
+			"name": "base.less",
+			"size": 78,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "crosstab_library.css",
+			"size": 110961,
+			"theme": "base"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 6753,
+			"theme": "base"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 252,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 89445,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sort_asc.gif",
+			"size": 56,
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sort_desc.gif",
+			"size": 56,
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sort_none.gif",
+			"size": 58,
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/treenode_collapse.gif",
+			"size": 112,
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/treenode_expand.gif",
+			"size": 116,
+			"theme": "base"
+		},
+		{
+			"name": "img/readme.txt",
+			"size": 204,
+			"theme": "base"
+		},
+		{
+			"name": "img/sort_asc.gif",
+			"size": 55,
+			"theme": "base"
+		},
+		{
+			"name": "img/sort_desc.gif",
+			"size": 56,
+			"theme": "base"
+		},
+		{
+			"name": "img/sort_none.gif",
+			"size": 59,
+			"theme": "base"
+		},
+		{
+			"name": "img/treenode_collapse.gif",
+			"size": 113,
+			"theme": "base"
+		},
+		{
+			"name": "img/treenode_expand.gif",
+			"size": 113,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 30681,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 3050,
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"size": 30683,
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"size": 37903,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"size": 299,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 32020,
+			"theme": "base"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 32022,
+			"theme": "base"
+		}
+	]
+}

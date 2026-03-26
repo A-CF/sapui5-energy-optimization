@@ -1,0 +1,58 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 2472,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 884
+		},
+		{
+			"name": "controller/ControllerImplementation-dbg.js",
+			"size": 3114,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ControllerImplementation.js",
+			"size": 1428
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI-dbg.js",
+			"size": 10617,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI.js",
+			"size": 1884
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"size": 90,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"size": 0,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"size": 0,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "manifest.json",
+			"size": 1953
+		},
+		{
+			"name": "view/Canvas.view.xml",
+			"size": 1755
+		}
+	]
+}

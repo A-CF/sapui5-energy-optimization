@@ -1,0 +1,177 @@
+{
+  "_version": "1.11.0",
+  "sap.app": {
+    "_version": "1.2.0",
+    "id": "ui.s2p.mm.stock.overview.ori",
+    "type": "application",
+    "resources": "resources.json",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "8.0.3"
+    },
+    "ach": "MM-FIO-IM-SGM",
+    "dataSources": {
+      "MMIM_MATERIAL_DATA_SRV": {
+        "uri": "/sap/opu/odata/sap/MMIM_MATERIAL_DATA_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml",
+          "annotations": ["annotation0"]
+        }
+      },
+      "annotation0": {
+        "uri": "annotations/annotation0.xml",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "annotations/annotation0.xml"
+        }
+      }
+    },
+    "sourceTemplate": {
+      "id": "sap.ui.ui5-template-plugin.1worklist",
+      "version": "1.0.0",
+      "toolsId": "9e8f27bd-55d0-4056-b2ad-72916dffcb1f"
+    }
+  },
+  "sap.fiori": {
+    "_version": "1.1.0",
+    "registrationIds": ["F1076"],
+    "archeType": "transactional"
+  },
+  "sap.ui": {
+    "_version": "1.2.0",
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "flexEnabled": true,
+    "rootView": {
+      "viewName": "ui.s2p.mm.stock.overview.ori.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "config": {
+      "fullWidth": true,
+      "sapFiori2Adaptation": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.78.17",
+      "libs": {
+        "sap.viz": {
+          "minVersion": "1.34.0",
+          "lazy": false
+        },
+        "sap.ushell": {
+          "minVersion": "1.30",
+          "lazy": false
+        },
+        "sap.ui.core": {
+          "minVersion": "1.34.0"
+        },
+        "sap.ui.generic.app": {
+          "minVersion": "1.34.0",
+          "lazy": false
+        },
+        "sap.m": {
+          "minVersion": "1.34.0"
+        },
+        "sap.uxap": {
+          "lazy": false
+        },
+        "sap.ui.comp": {
+          "minVersion": "1.34.0",
+          "lazy": false
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.34.0",
+          "lazy": false
+        },
+        "sap.suite.ui.commons": {
+          "minVersion": "1.34.0",
+          "lazy": false
+        },
+        "sap.suite.ui.microchart": {
+          "minVersion": "1.30",
+          "lazy": false
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui.s2p.mm.stock.overview.ori.i18n.i18n"
+        }
+      },
+      "oMaterialData": {
+        "dataSource": "MMIM_MATERIAL_DATA_SRV",
+        "preload": true,
+        "settings": {
+          "metadataUrlParams": {
+            "sap-documentation": "heading"
+          }
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ui.s2p.mm.stock.overview.ori.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": ":all*:",
+          "name": "S1",
+          "target": "S1"
+        }
+      ],
+      "targets": {
+        "S1": {
+          "viewName": "S1",
+          "viewId": "S1",
+          "viewLevel": 1
+        },
+        "objectNotFound": {
+          "viewName": "ObjectNotFound",
+          "viewId": "objectNotFound"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
+      }
+    }
+  },
+  "sap.platform.abap": {
+    "_version": "1.1.0",
+    "uri": "/sap/bc/ui5_ui5/sap/stockovervs1"
+  }
+}

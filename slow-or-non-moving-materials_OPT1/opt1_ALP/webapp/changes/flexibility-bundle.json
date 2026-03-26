@@ -1,0 +1,36 @@
+{
+  "changes": [
+    {
+      "fileName": "id_1497273731803_93_propertyChange",
+      "fileType": "change",
+      "changeType": "propertyChange",
+      "reference": "ui.s2p.mm.slonomo.mat.opt1.Component",
+      "packageName": "$TMP",
+      "content": { "property": "useExportToExcel", "oldValue": false, "newValue": true },
+      "selector": {
+        "id": "ui.s2p.mm.slonomo.mat.opt1::sap.suite.ui.generic.template.AnalyticalListPage.view.AnalyticalListPage::C_SlowOrNonMovingMatlQryResults--table",
+        "type": "sap.ui.comp.smarttable.SmartTable",
+        "idIsLocal": false
+      },
+      "layer": "VENDOR",
+      "texts": {},
+      "namespace": "apps/ui.s2p.mm.slonomo.mat.opt1/changes/",
+      "creation": "2017-06-12T13:22:14.540Z",
+      "originalLanguage": "EN",
+      "conditions": {},
+      "context": "",
+      "support": {
+        "generator": "Change.createInitialFileContent",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.44.10"
+      },
+      "dependentSelector": {}
+    }
+  ],
+  "compVariants": [],
+  "variants": [],
+  "variantChanges": [],
+  "variantDependentControlChanges": [],
+  "variantManagementChanges": []
+}

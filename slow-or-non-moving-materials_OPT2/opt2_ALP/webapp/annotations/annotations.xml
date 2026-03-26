@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2009-2020 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/sap/MMIM_SLOWORNONMOVINGMATERIAL_SRV/$metadata">
+		<edmx:Include Alias="MMIM_SLOWORNONMOVINGMATERIAL_SRV" Namespace="MMIM_SLOWORNONMOVINGMATERIAL_SRV"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ui.s2p.mm.slonomo.mat.opt2.MMIM_SLOWORNONMOVINGMATERIAL_SRV">
+			<!--===============================================================================
+                Entity Type from chosen collection 
+                ================================================================================-->
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters/P_InventoryConsumptionGroup">
+				<Annotation Term="Common.Text" Path="InventoryConsumptionGroup_Text">
+				<Annotation Term="UI.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" /></Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/Material">
+				<!--===============================================================================
+                Material value list annotations for grafical filter Material by Value
+                ================================================================================-->
+				<Annotation Term="Common.ValueList" Qualifier="MaterialByValue">
+					<Record>
+						<PropertyValue String="Material" Property="Label"/>
+						<PropertyValue String="C_SlowOrNonMovingMatlQryResults" Property="CollectionPath"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Material"/>
+									<PropertyValue String="Material" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Material"/>
+									<PropertyValue String="Material" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Plant"/>
+									<PropertyValue String="Plant" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="StorageLocation"/>
+									<PropertyValue String="StorageLocation" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="StockIdentifyingBatch"/>
+									<PropertyValue String="StockIdentifyingBatch" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgSupplier"/>
+									<PropertyValue String="SpecialStockIdfgSupplier" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgSalesOrder"/>
+									<PropertyValue String="SpecialStockIdfgSalesOrder" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgSalesOrderItem"/>
+									<PropertyValue String="SpecialStockIdfgSalesOrderItem" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgWBSElement"/>
+									<PropertyValue String="SpecialStockIdfgWBSElement" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgCustomer"/>
+									<PropertyValue String="SpecialStockIdfgCustomer" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgStockOwner"/>
+									<PropertyValue String="SpecialStockIdfgStockOwner" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="InventorySpecialStockType"/>
+									<PropertyValue String="InventorySpecialStockType" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="InventoryStockType"/>
+									<PropertyValue String="InventoryStockType" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MaterialBaseUnit"/>
+									<PropertyValue String="MaterialBaseUnit" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MaterialGroup"/>
+									<PropertyValue String="MaterialGroup" Property="ValueListProperty"/>
+								</Record>
+								<Record Type="Common.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MaterialType"/>
+									<PropertyValue String="MaterialType" Property="ValueListProperty"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue String="VarMaterialByStockValue" Property="PresentationVariantQualifier"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult">
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>ConsumptionToStockRatio</PropertyPath>
+						<PropertyPath>Material</PropertyPath>
+						<PropertyPath>Plant</PropertyPath>
+						<PropertyPath>StorageLocation</PropertyPath>
+						<PropertyPath>MaterialGroup</PropertyPath>
+						<PropertyPath>MaterialType</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="GeneralInformation"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<!--===============================================================================
+                Entity Type from chosen navigation property
+                ================================================================================-->
+			<Annotations Target="">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="GeneralInformation"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

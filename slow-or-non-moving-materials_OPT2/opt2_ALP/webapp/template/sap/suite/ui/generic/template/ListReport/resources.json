@@ -1,0 +1,486 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "AnnotationHelper-dbg.js",
+			"size": 12444,
+			"isDebug": true
+		},
+		{
+			"name": "AnnotationHelper.js",
+			"size": 4828
+		},
+		{
+			"name": "Component-dbg.js",
+			"size": 19843,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 7299
+		},
+		{
+			"name": "controller/ControllerImplementation-dbg.js",
+			"size": 37714,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ControllerImplementation.js",
+			"size": 17045
+		},
+		{
+			"name": "controller/IappStateHandler-dbg.js",
+			"size": 49325,
+			"isDebug": true
+		},
+		{
+			"name": "controller/IappStateHandler.js",
+			"size": 15795
+		},
+		{
+			"name": "controller/MultiEditHandler-dbg.js",
+			"size": 12746,
+			"isDebug": true
+		},
+		{
+			"name": "controller/MultiEditHandler.js",
+			"size": 3337
+		},
+		{
+			"name": "controller/MultipleViewsHandler-dbg.js",
+			"size": 10871,
+			"isDebug": true
+		},
+		{
+			"name": "controller/MultipleViewsHandler.js",
+			"size": 4005
+		},
+		{
+			"name": "controller/WorklistHandler-dbg.js",
+			"size": 5343,
+			"isDebug": true
+		},
+		{
+			"name": "controller/WorklistHandler.js",
+			"size": 1841
+		},
+		{
+			"name": "controllerFrameworkExtensions-dbg.js",
+			"size": 3095,
+			"isDebug": true
+		},
+		{
+			"name": "controllerFrameworkExtensions.js",
+			"size": 640
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI-dbg.js",
+			"size": 9960,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/ExtensionAPI.js",
+			"size": 1744
+		},
+		{
+			"name": "extensionAPI/NonDraftTransactionController-dbg.js",
+			"size": 4691,
+			"isDebug": true
+		},
+		{
+			"name": "extensionAPI/NonDraftTransactionController.js",
+			"size": 1759
+		},
+		{
+			"name": "flexibility/ListReport.flexibility-dbg.js",
+			"size": 1680,
+			"isDebug": true
+		},
+		{
+			"name": "flexibility/ListReport.flexibility.js",
+			"size": 1144
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"size": 6928,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"size": 7780,
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"size": 9194,
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ca.properties",
+			"size": 2948,
+			"locale": "ca",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"size": 3278,
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cy.properties",
+			"size": 2977,
+			"locale": "cy",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_da.properties",
+			"size": 2772,
+			"locale": "da",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"size": 3047,
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_el.properties",
+			"size": 10131,
+			"locale": "el",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"size": 2646,
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_GB.properties",
+			"size": 2644,
+			"locale": "en_GB",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"size": 14109,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"size": 4210,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"size": 2985,
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es_MX.properties",
+			"size": 2942,
+			"locale": "es_MX",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_et.properties",
+			"size": 2895,
+			"locale": "et",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fi.properties",
+			"size": 3068,
+			"locale": "fi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"size": 3287,
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr_CA.properties",
+			"size": 3143,
+			"locale": "fr_CA",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hi.properties",
+			"size": 9380,
+			"locale": "hi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"size": 2887,
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"size": 3491,
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_id.properties",
+			"size": 2810,
+			"locale": "id",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"size": 2811,
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"size": 6970,
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"size": 5407,
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_kk.properties",
+			"size": 8684,
+			"locale": "kk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ko.properties",
+			"size": 4885,
+			"locale": "ko",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lt.properties",
+			"size": 3259,
+			"locale": "lt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lv.properties",
+			"size": 3365,
+			"locale": "lv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ms.properties",
+			"size": 2788,
+			"locale": "ms",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_nl.properties",
+			"size": 2812,
+			"locale": "nl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"size": 2775,
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"size": 3133,
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"size": 3067,
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt_PT.properties",
+			"size": 3041,
+			"locale": "pt_PT",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"size": 3115,
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"size": 9317,
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"size": 3024,
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"size": 3324,
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"size": 2900,
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sr.properties",
+			"size": 8646,
+			"locale": "sr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sv.properties",
+			"size": 2856,
+			"locale": "sv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_th.properties",
+			"size": 9010,
+			"locale": "th",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"size": 3208,
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_uk.properties",
+			"size": 8776,
+			"locale": "uk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_vi.properties",
+			"size": 5570,
+			"locale": "vi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"size": 3777,
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_TW.properties",
+			"size": 3722,
+			"locale": "zh_TW",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "manifest.json",
+			"size": 1975
+		},
+		{
+			"name": "view/ListReport.view.xml",
+			"size": 809
+		},
+		{
+			"name": "view/fragments/BreakoutActions.fragment.xml",
+			"size": 1120
+		},
+		{
+			"name": "view/fragments/CRUDActionButtons.fragment.xml",
+			"size": 4788
+		},
+		{
+			"name": "view/fragments/DefaultVariant.fragment.xml",
+			"size": 2337
+		},
+		{
+			"name": "view/fragments/DeleteConfirmation.fragment.xml",
+			"size": 1293
+		},
+		{
+			"name": "view/fragments/DraftInfoBox.fragment.xml",
+			"size": 1154
+		},
+		{
+			"name": "view/fragments/FullscreenPage.fragment.xml",
+			"size": 5852
+		},
+		{
+			"name": "view/fragments/HeaderCommands.fragment.xml",
+			"size": 377
+		},
+		{
+			"name": "view/fragments/IconTabBarWithSmartTable.fragment.xml",
+			"size": 3175
+		},
+		{
+			"name": "view/fragments/MultiEditConfirmation.fragment.xml",
+			"size": 497
+		},
+		{
+			"name": "view/fragments/MultiEditDialog.fragment.xml",
+			"size": 385
+		},
+		{
+			"name": "view/fragments/MultipleViewsSingleTableMode.fragment.xml",
+			"size": 3144
+		},
+		{
+			"name": "view/fragments/MultipleViewsSingleTableModeItemCustomData.fragment.xml",
+			"size": 2447
+		},
+		{
+			"name": "view/fragments/SearchField.fragment.xml",
+			"size": 679
+		},
+		{
+			"name": "view/fragments/SmartChart.fragment.xml",
+			"size": 4691
+		},
+		{
+			"name": "view/fragments/SmartChartToolbar.fragment.xml",
+			"size": 1543
+		},
+		{
+			"name": "view/fragments/SmartFilterBar.fragment.xml",
+			"size": 6941
+		},
+		{
+			"name": "view/fragments/SmartTable.fragment.xml",
+			"size": 18117
+		},
+		{
+			"name": "view/fragments/SmartTableToolbar.fragment.xml",
+			"size": 4909
+		},
+		{
+			"name": "view/fragments/TableCommands.fragment.xml",
+			"size": 361
+		},
+		{
+			"name": "view/fragments/TitleVariant.fragment.xml",
+			"size": 2043
+		}
+	]
+}

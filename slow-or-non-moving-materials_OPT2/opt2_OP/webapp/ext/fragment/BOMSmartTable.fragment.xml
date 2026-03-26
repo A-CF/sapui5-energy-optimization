@@ -1,0 +1,14 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.ui.comp.smarttable" xmlns:popover="sap.ui.comp.navpopover">
+	<SmartTable id="idBOMTable" tableType="ResponsiveTable" enableAutoBinding="false" entitySet="C_SlowOrNonMvgMatlBOMUsageSet" useVariantManagement="false"
+				useTablePersonalisation="false" showTablePersonalisation="false" showRowCount="false" useExportToExcel="false" beforeRebindTable="onBeforeRebindTable"
+				requestAtLeastFields="BillOfMaterialComponent,Material,Plant" placeToolbarInTable="true">
+		<semanticObjectController>
+			<popover:SemanticObjectController id="idSTSemObjCtrller" beforePopoverOpens="onBeforePopoverOpens"/>
+		</semanticObjectController>
+	</SmartTable>
+</core:FragmentDefinition>

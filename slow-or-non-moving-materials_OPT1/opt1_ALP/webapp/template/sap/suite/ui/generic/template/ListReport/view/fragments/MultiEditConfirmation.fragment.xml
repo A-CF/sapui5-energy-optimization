@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>WARNING}" class="sapUiContentPadding" state="Warning" ariaLabelledBy="warningText">
+		<content>
+			<Text text="{multiEditConfirmation>/warningText}" />
+		</content>
+		<beginButton>
+			<Button text="{i18n>MULTI_EDIT}" press="onContinue" visible="true" type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>CANCEL}" press="onCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

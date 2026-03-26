@@ -1,0 +1,46 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.ui.comp.valuehelpdialog" xmlns:m="sap.m" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core">
+	<ValueHelpDialog title="{i18n>TITLE_MATERIALGEN_HELP}" ok="onValueHelpOkPress" cancel="onValueHelpCancelPress"
+		afterClose="onValueHelpAfterClose" supportRanges="false" supportMultiselect="false" key="Material" descriptionKey="MaterialName">
+		<filterBar>
+			<fb:FilterBar advancedMode="true" search="onMaterialFilterBarSearch">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem groupName="gn1" name="Material" label="{i18n>LABEL_MATERIAL_COL}" visibleInFilterBar="true">
+						<fb:control>
+							<m:MultiInput name="Material" showValueHelp="true" valueHelpRequest="onFilterValueHelpRequested"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="gn1" name="MaterialName" label="{i18n>LABEL_MATERIALNAME_COL1}" visibleInFilterBar="true">
+						<fb:control>
+							<m:MultiInput name="MaterialName" showValueHelp="true" valueHelpRequest="onFilterValueHelpRequested"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem id="idPlantFilter" groupName="gn1" name="Plant" label="{i18n>LABEL_PLANT_COL}" visibleInFilterBar="true">
+						<fb:control>
+							<m:MultiInput name="Plant" showValueHelp="true" valueHelpRequest="onFilterValueHelpRequested"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem id="idPlantNameFilter" groupName="gn1" name="PlantName" label="{i18n>LABEL_PLANT_NAME_COL}" visibleInFilterBar="true">
+						<fb:control>
+							<m:MultiInput name="PlantName" showValueHelp="true" valueHelpRequest="onFilterValueHelpRequested"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="gn2" name="Batch" label="{i18n>LABEL_BATCH_COL}" visibleInFilterBar="true">
+						<fb:control>
+							<m:MultiInput name="Batch" showValueHelp="true" valueHelpRequest="onFilterValueHelpRequested"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem id="idSupplierFilter" groupName="gn2" name="withSupplier" label="{i18n>LABEL_SWITCH}" visibleInFilterBar="true">
+						<fb:control>
+							<m:CheckBox selected="false"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+		</filterBar>
+	</ValueHelpDialog>
+</core:FragmentDefinition>

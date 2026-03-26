@@ -1,0 +1,21 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog id="idSelectPlantDialog" 
+		noDataText="{i18n>PLANT_VALUE_HELP_NO_DATA}"
+		title="{i18n>PLANT_VALUE_HELP_TITLE}"
+		search="_handlePlantSearch"
+		items="{path: 'oPlantCollection>/PlantCollection',
+		templateShareable: false}"
+		 >
+		<StandardListItem id="idPlant"
+			title="{oPlantCollection>PlantName}"
+			description="{oPlantCollection>Plant}"
+			type="Active"  />
+	</SelectDialog>
+</core:FragmentDefinition>

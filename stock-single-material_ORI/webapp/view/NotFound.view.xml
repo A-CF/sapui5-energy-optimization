@@ -1,0 +1,12 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View controllerName="ui.s2p.mm.stock.overview.ori.controller.NotFound" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<MessagePage title="{i18n>notFoundTitle}" text="{i18n>notFoundText}" icon="{sap-icon://document}" id="page" description="">
+		<customDescription>
+			<Link id="link" text="{i18n>backToWorklist}" press="onLinkPressed"/>
+		</customDescription>
+	</MessagePage>
+</mvc:View>
