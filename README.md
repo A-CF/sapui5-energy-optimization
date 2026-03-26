@@ -1,4 +1,4 @@
-# Title
+# Stock - Single Material & Slow or Non-Moving Materials: Versions and Optimizations 
 
 This repository accompanies the paper:
 **"Optimizing client-side energy consumption in enterprise web applications via power profiling"**
